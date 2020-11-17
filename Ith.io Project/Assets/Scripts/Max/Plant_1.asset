@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Plant_1
   m_EditorClassIdentifier: 
   plantName: Potato
-  growthSpeed: 20
+  growthSpeed: 1
   growthSprites:
   - {fileID: 0}
   - {fileID: 0}
