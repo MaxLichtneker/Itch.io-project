@@ -36,7 +36,9 @@ public class Movement : MonoBehaviour
     private void move()
     {
         //rotate the player to the mouse
-        transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPos);
+        Vector2 direction = new Vector2(targetPos.x - transform.position.x, targetPos.y - transform.position.y);
+        transform.up = direction;
+
         //moeve to the target position
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
         //if it reaches the targetpos stop moving
