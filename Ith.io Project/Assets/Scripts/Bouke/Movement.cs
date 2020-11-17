@@ -12,6 +12,10 @@ public class Movement : MonoBehaviour
     private bool moving = false;
 
 
+    //public Vector3 maxMovementTopLeft;
+    //public Vector3 maxMovementDownRight;
+
+
     private void Update()
     {
         
