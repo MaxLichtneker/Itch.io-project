@@ -11,22 +11,32 @@ public class Movement : MonoBehaviour
     private Vector3 targetPos;
     private bool moving = false;
 
+    private GameManger gm;
+
 
     //public Vector3 maxMovementTopLeft;
     //public Vector3 maxMovementDownRight;
-
-
+    private void Awake()
+    {
+        gm = GameManger.FindObjectOfType<GameManger>();
+    }
+    
     private void Update()
     {
-        
-        if (Input.GetMouseButtonDown(0))
+        if (gm.ableToWalk)
         {
-            SetTargetPosition();
+            if (Input.GetMouseButtonDown(0))
+            {
+                SetTargetPosition();
+            }
+            
         }
         if (moving)
         {
             move();
+            Debug.Log("test");
         }
+        
     }
     private void SetTargetPosition()
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class GameManger : MonoBehaviour
 {
     public int money;
@@ -12,23 +12,40 @@ public class GameManger : MonoBehaviour
     public int sellPriceCapace;
 
     //how mutch I have of this plant
-    [HideInInspector] public int amountCarrot;
-    [HideInInspector] public int amountTomato;
-    [HideInInspector] public int amountCapace;
+    public int amountCarrot;
+    public int amountTomato;
+    public int amountCapace;
 
-    // Start is called before the first frame update
-    void Start()
+    public TMP_Text t_amountCarrot;
+    public TMP_Text t_amountTomato;
+    public TMP_Text t_amountCapace;
+
+    public GameObject sellui;
+    public bool selluiactive;
+
+    public bool ableToWalk;
+
+    private void Awake()
     {
-        
+        sellui.SetActive(selluiactive);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        t_amountCarrot.text = "Carrots In Stock: " + amountCarrot.ToString();
+        t_amountTomato.text = "Tomatos In Stock: " + amountTomato.ToString();
+        t_amountCapace.text = "Capaces In Stock: " + amountCapace.ToString();
+
+        sellui.SetActive(selluiactive);
+
+        ableToWalk = !selluiactive;
     }
     public void AddMoney(int amount)
     {
         money += amount;
+    }
+    public void ActivateSellUi()
+    {
+        selluiactive = true;
     }
 }

@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Verkoop : MonoBehaviour
 {
-    public int price_Carrot;
-    public int price_Tomato;
-    public int price_Capace;
 
     private GameManger gm;
+
+    
 
     private void Awake()
     {
@@ -18,16 +17,10 @@ public class Verkoop : MonoBehaviour
         {
             Debug.LogError("Cant find the gamemanger in this scene!");
         }
-    }
-
-    private void Update()
-    {
         
     }
 
-    
-
-    public void VerkoopCarrot()
+    public void SellCarrot()
     {
         if(gm.amountCarrot > 0)
         {
@@ -35,7 +28,7 @@ public class Verkoop : MonoBehaviour
             gm.AddMoney(gm.sellPriceCarrot);
         }
     }
-    public void Verkooptomato()
+    public void SellTomato()
     {
         if(gm.amountTomato > 0)
         {
@@ -44,9 +37,17 @@ public class Verkoop : MonoBehaviour
             
         }
     }
-    public void Verkoopcapace()
+    public void SellCapace()
     {
-
+        if(gm.amountCapace > 0)
+        {
+            gm.amountCapace -= 1;
+            gm.AddMoney(gm.sellPriceCapace);
+        }
+    }
+    private void OnMouseDown()
+    {
+        gm.ActivateSellUi();
     }
 
 
