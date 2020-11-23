@@ -8,9 +8,10 @@ public class PlantData : ScriptableObject
     [Header("name of the plant")]
     public string plantName;
 
+    [Range(0, 2)]
     [Header("the speed at which the plant will grow")]
     public float growthSpeed;
 
     [Header("sprites for every growth stage of the plant from 0 to 1")]
-    public GameObject[] growthSprites;
+    public Sprite[] growthSprites;
 }

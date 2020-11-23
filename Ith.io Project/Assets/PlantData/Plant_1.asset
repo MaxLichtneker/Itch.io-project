@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274a0c7e4962b764292f73ba118d3ae5, type: 3}
   m_Name: Plant_1
   m_EditorClassIdentifier: 
-  plantName: Potato
-  growthSpeed: 1
+  plantName: Carrots
+  growthSpeed: 0.7
   growthSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 86d78f66085886640928aea9df2e8b43, type: 3}
+  - {fileID: 21300000, guid: f44dbbea5c9526147ae825e0384e88d4, type: 3}
+  - {fileID: 21300000, guid: 465707903cf49304eabde3310a30126e, type: 3}
+  - {fileID: 21300000, guid: da2c5b83edab732409b6cf60dabe47c4, type: 3}
+  - {fileID: 21300000, guid: 5343357a348a1fc4eb83d5cadc81c468, type: 3}
