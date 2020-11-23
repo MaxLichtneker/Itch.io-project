@@ -13,6 +13,7 @@ public class Plot : MonoBehaviour
 
     public GameObject plantPrefab = null;
 
+    //shows text when the mouse is over the plot
     private void OnMouseOver()
     {
         if(plotTaken == false)
@@ -25,11 +26,13 @@ public class Plot : MonoBehaviour
         }
     }
 
+    //sets empties the string so when the mouse is not over plot text is not showing
     private void OnMouseExit()
     {
         plotText.text = "";
     }
 
+    //when the player clicks on the plot it will plant a seed
     private void OnMouseDown()
     {
         if (plotTaken == false)
