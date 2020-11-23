@@ -8,20 +8,10 @@ public class Plot : MonoBehaviour
     [Header("keeps track of the plot")]
     [SerializeField] private bool plotTaken = false;
 
+    [Header("text that will appear when hovering above plot")]
     [SerializeField] private TextMeshPro plotText = null;
 
     public GameObject plantPrefab = null;
-
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     private void OnMouseOver()
     {
