@@ -6,20 +6,24 @@ public class Plant : MonoBehaviour
 {
     public PlantData plantData;
 
+    [Range(0, 10)]
     [Header("how long it takes for the plant to grow")]
     [SerializeField] private float growthDuration = 0.0f;
 
     [Header("keeps track if the plant is fully grown or not")]
     [SerializeField] private bool fullyGrown = false;
 
-    [Header("sprites for every growth stage of the plant from 0 to 1")]
-    public GameObject[] growthSprites = null;
+    private SpriteRenderer plantSprite;
 
     private float startDuration = 0.0f;
     private int arrayIndex = 0;
 
     private void Start()
     {
+        plantSprite = GetComponentInChildren<SpriteRenderer>();
+
+        plantSprite.sprite = plantData.growthSprites[0];
+
         startDuration = growthDuration;
     }
 
@@ -27,7 +31,10 @@ public class Plant : MonoBehaviour
     {
         TimerDecrease();
 
-        GrowPlant();
+        if(plantData.growthSprites != null)
+        {
+            GrowPlant();
+        }
     }
 
     //decreases the timer for growth of one iteration
@@ -48,13 +55,13 @@ public class Plant : MonoBehaviour
     {
         if(growthDuration <= 0 && fullyGrown == false)
         {
-            growthSprites[arrayIndex].SetActive(false);
+            plantSprite.sprite = null;
 
             arrayIndex++;
 
-            growthSprites[arrayIndex].SetActive(true);
+            plantSprite.sprite = plantData.growthSprites[arrayIndex];
         }
-        else if(arrayIndex == growthSprites.Length - 1)
+        else if(arrayIndex == plantData.growthSprites.Length - 1)
         {
             fullyGrown = true;
         }
