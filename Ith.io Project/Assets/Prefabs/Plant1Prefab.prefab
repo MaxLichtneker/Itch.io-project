@@ -127,5 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantData: {fileID: 11400000, guid: 4d799313264929e4fb46d984e125fa71, type: 2}
+  cropState: 0
   growthDuration: 5.12
+  monsterSpawnTimer: 5.7
   fullyGrown: 0
+  monster: {fileID: 100000, guid: 68a66fb5a71f8204a8dcb613c97d1fa8, type: 3}

@@ -22,13 +22,17 @@ public class Plant : MonoBehaviour
     [Header("how long it takes for the plant to grow")]
     [SerializeField] private float growthDuration = 0.0f;
 
+    [Range(0, 20)]
+    [Header("how long it will take for the monster to spawn after the plant dies")]
+    [SerializeField] private float monsterSpawnTimer = 0.0f;
+
     [Header("keeps track if the plant is fully grown or not")]
     [SerializeField] private bool fullyGrown = false;
 
     [Header("Prefab of the plant monster that spawns once the plant dies")]
-    [SerializeField] private GameObject monster;
+    [SerializeField] private GameObject monster = null;
 
-    private SpriteRenderer plantSprite;
+    private SpriteRenderer plantSprite = null;
 
     private float startDuration = 0.0f;
     private int arrayIndex = 0;
@@ -51,7 +55,15 @@ public class Plant : MonoBehaviour
         if(plantData.growthSprites != null)
         {
             GrowPlant();
+            
+            if(arrayIndex == plantData.growthSprites.Length - 2)
+            {
+                cropState = CropState.harvestable;
+            }
         }
+
+        SpawnMonster();
+
     }
 
     //decreases the timer for growth of one iteration
@@ -85,11 +97,21 @@ public class Plant : MonoBehaviour
         }
     }
 
+    //spawns a monster after a certain amount of time after the plant has died
     private void SpawnMonster()
     {
         if (fullyGrown)
         {
-            cropState = CropState.monster;
+            monsterSpawnTimer -= 1.0f * Time.deltaTime;
+
+            monsterSpawnTimer = Mathf.Clamp(monsterSpawnTimer, 0, 20);
+
+            if(monsterSpawnTimer <= 0)
+            {
+                cropState = CropState.monster;
+                Instantiate(monster, gameObject.transform.position, Quaternion.identity);
+            }
+
         }
     }
 
