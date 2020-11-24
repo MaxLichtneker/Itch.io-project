@@ -13,6 +13,10 @@ public class Movement : MonoBehaviour
 
     private GameManger gm;
 
+    
+
+    
+
 
     //public Vector3 maxMovementTopLeft;
     //public Vector3 maxMovementDownRight;
@@ -27,13 +31,17 @@ public class Movement : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                
                 SetTargetPosition();
+
             }
             if (moving)
             {
                 move();
+                
             }
         }
+       
         
         
     }
@@ -44,6 +52,8 @@ public class Movement : MonoBehaviour
         //ignore Z transfore
         targetPos.z = transform.position.z;
 
+        
+
         moving = true;
     }
     private void move()
@@ -52,8 +62,14 @@ public class Movement : MonoBehaviour
         Vector2 direction = new Vector2(targetPos.x - transform.position.x, targetPos.y - transform.position.y);
         transform.up = direction;
 
+
+        
+
         //moeve to the target position
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+
+        
+        
         //if it reaches the targetpos stop moving
         if(transform.position == targetPos)
         {
