@@ -110,6 +110,7 @@ public class Plant : MonoBehaviour
             {
                 cropState = CropState.monster;
                 Instantiate(monster, gameObject.transform.position, Quaternion.identity);
+                fullyGrown = false;
             }
 
         }
