@@ -2,9 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CropState
+{
+    empty,
+    seed,
+    harvestable,
+    dead,
+    monster
+}
+
 public class Plant : MonoBehaviour
 {
     public PlantData plantData;
+
+    [HideInInspector]
+    public CropState cropState;
 
     [Range(0, 10)]
     [Header("how long it takes for the plant to grow")]
@@ -12,6 +24,9 @@ public class Plant : MonoBehaviour
 
     [Header("keeps track if the plant is fully grown or not")]
     [SerializeField] private bool fullyGrown = false;
+
+    [Header("Prefab of the plant monster that spawns once the plant dies")]
+    [SerializeField] private GameObject monster;
 
     private SpriteRenderer plantSprite;
 
@@ -21,6 +36,8 @@ public class Plant : MonoBehaviour
     private void Start()
     {
         plantSprite = GetComponentInChildren<SpriteRenderer>();
+
+        cropState = CropState.seed;
 
         plantSprite.sprite = plantData.growthSprites[0];
 
@@ -63,7 +80,17 @@ public class Plant : MonoBehaviour
         }
         else if(arrayIndex == plantData.growthSprites.Length - 1)
         {
+            cropState = CropState.dead;
             fullyGrown = true;
         }
     }
+
+    private void SpawnMonster()
+    {
+        if (fullyGrown)
+        {
+            cropState = CropState.monster;
+        }
+    }
+
 }

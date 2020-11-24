@@ -5,6 +5,8 @@ using TMPro;
 
 public class Plot : MonoBehaviour
 {
+    public CropState cropState;
+
     [Header("keeps track of the plot")]
     [SerializeField] private bool plotTaken = false;
 
@@ -12,6 +14,16 @@ public class Plot : MonoBehaviour
     [SerializeField] private TextMeshPro plotText = null;
 
     public GameObject plantPrefab = null;
+
+    private GameObject plant;
+
+    private void Update()
+    {
+        if (plotTaken)
+        {
+            cropState = GetComponentInChildren<Plant>().cropState;
+        }
+    }
 
     //shows text when the mouse is over the plot
     private void OnMouseOver()
@@ -38,7 +50,9 @@ public class Plot : MonoBehaviour
         if (plotTaken == false)
         {
             plotTaken = true;
-            Instantiate(plantPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            var child = Instantiate(plantPrefab, gameObject.transform.position, gameObject.transform.rotation);
+
+            child.transform.parent = gameObject.transform;
         }
     }
 }
