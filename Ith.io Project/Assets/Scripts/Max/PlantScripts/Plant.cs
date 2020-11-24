@@ -109,8 +109,16 @@ public class Plant : MonoBehaviour
             if(monsterSpawnTimer <= 0)
             {
                 cropState = CropState.monster;
+
+                plantSprite.sprite = null;
+
                 Instantiate(monster, gameObject.transform.position, Quaternion.identity);
-                fullyGrown = false;
+
+                cropState = CropState.empty;
+
+                monsterSpawnTimer = 5.0f;
+                Destroy(gameObject, 2f);
+
             }
 
         }

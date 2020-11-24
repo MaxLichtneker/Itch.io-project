@@ -19,9 +19,15 @@ public class Plot : MonoBehaviour
 
     private void Update()
     {
+        CheckPlantState();
+
         if (plotTaken)
         {
             cropState = GetComponentInChildren<Plant>().cropState;
+        }
+        else if (!plotTaken)
+        {
+            cropState = CropState.empty;
         }
     }
 
@@ -53,6 +59,14 @@ public class Plot : MonoBehaviour
             var child = Instantiate(plantPrefab, gameObject.transform.position, gameObject.transform.rotation);
 
             child.transform.parent = gameObject.transform;
+        }
+    }
+    
+    private void CheckPlantState()
+    {
+        if(cropState == CropState.dead)
+        {
+            plotTaken = false;
         }
     }
 }
