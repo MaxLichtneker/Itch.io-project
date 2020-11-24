@@ -851,15 +851,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
-  sellPriceCarrot: 10
-  sellPriceTomato: 10
-  sellPriceCapace: 10
   amountCarrot: 5
   amountTomato: 5
   amountCapace: 5
-  t_amountCarrot: {fileID: 904322864}
-  t_amountTomato: {fileID: 981904178}
-  t_amountCapace: {fileID: 1888617425}
+  sellUiActive: 0
+  ableToWalk: 0
 --- !u!4 &349498753
 Transform:
   m_ObjectHideFlags: 0
@@ -1036,7 +1032,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec13801ae2edf941a20b18ebb4c4606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sellUi: {fileID: 698920866}
+  sellPriceCarrot: 10
+  sellPriceTomato: 10
+  sellPriceCapace: 10
+  t_amountCarrot: {fileID: 904322864}
+  t_amountTomato: {fileID: 981904178}
+  t_amountCapace: {fileID: 1888617425}
+  sellui: {fileID: 698920866}
 --- !u!58 &493384310
 CircleCollider2D:
   m_ObjectHideFlags: 0
