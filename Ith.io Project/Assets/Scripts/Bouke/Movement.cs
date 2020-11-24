@@ -29,13 +29,12 @@ public class Movement : MonoBehaviour
             {
                 SetTargetPosition();
             }
-            
+            if (moving)
+            {
+                move();
+            }
         }
-        if (moving)
-        {
-            move();
-            Debug.Log("test");
-        }
+        
         
     }
     private void SetTargetPosition()

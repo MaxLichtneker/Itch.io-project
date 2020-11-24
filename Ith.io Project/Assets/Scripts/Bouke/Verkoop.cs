@@ -19,6 +19,10 @@ public class Verkoop : MonoBehaviour
 
     public GameObject sellui;
 
+    
+
+    public  bool clickedon;
+
     private void Awake()
     {
         //get the gamemanger
@@ -28,17 +32,24 @@ public class Verkoop : MonoBehaviour
             Debug.LogError("Cant find the gamemanger in this scene!");
         }
 
+        
         sellui.SetActive(gm.sellUiActive);
     }
     private void Update()
     {
+        //show homw mutch of everything is still in stock
         t_amountCarrot.text = "Carrots In Stock: " + gm.amountCarrot.ToString();
         t_amountTomato.text = "Tomatos In Stock: " + gm.amountTomato.ToString();
         t_amountCapace.text = "Capaces In Stock: " + gm.amountCapace.ToString();
 
         sellui.SetActive(gm.sellUiActive);
-    }
 
+        
+    }
+    /// <summary>
+    /// sell a carrot
+    /// used for the sell carrot button in the sell ui
+    /// </summary>
     public void SellCarrot()
     {
         if(gm.amountCarrot > 0)
@@ -47,6 +58,10 @@ public class Verkoop : MonoBehaviour
             gm.AddMoney(sellPriceCarrot);
         }
     }
+    /// <summary>
+    /// sell a tomato
+    /// used for the sell tomato button in the sell ui
+    /// </summary>
     public void SellTomato()
     {
         if(gm.amountTomato > 0)
@@ -56,6 +71,10 @@ public class Verkoop : MonoBehaviour
             
         }
     }
+    /// <summary>
+    /// sell a capace
+    /// used for the sell capace button in the sell ui
+    /// </summary>
     public void SellCapace()
     {
         if(gm.amountCapace > 0)
@@ -66,11 +85,28 @@ public class Verkoop : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        ActivateSellUi();
+        clickedon = true;
     }
     public void ActivateSellUi()
     {
         gm.sellUiActive = true;
+    }
+    /// <summary>
+    /// the exit shop
+    /// this is used for the exit shop button in the sell ui
+    /// </summary>
+    public void ExitShop()
+    {
+        clickedon = false;
+        gm.sellUiActive = false;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            
+                ActivateSellUi();
+        }
     }
 
 
