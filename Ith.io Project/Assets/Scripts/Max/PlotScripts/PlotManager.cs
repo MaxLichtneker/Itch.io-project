@@ -7,13 +7,10 @@ public class PlotManager : MonoBehaviour
     [Header("all the seeds and the amounts the player has")]
     public int carrotSeed, cabbageSeed, tomatoSeed;
 
-    void Start()
-    {
-        
-    }
+    public static PlotManager plotManagerInstance;
 
-    void Update()
+    private void Awake()
     {
-        
+        plotManagerInstance = this;
     }
 }

@@ -9,7 +9,7 @@ public class Plot : MonoBehaviour
     public CropState cropState;
 
     [Header("keeps track of the plot")]
-    [SerializeField] private bool plotTaken = false;
+    public bool plotTaken = false;
 
     [Header("GameObject of the seed Selection menu")]
     public GameObject SeedSelectionMenu = null;
@@ -22,9 +22,11 @@ public class Plot : MonoBehaviour
     private GameObject plant;
 
     private GameManger gm;
+
     private void Awake()
     {
         gm = GameManger.FindObjectOfType<GameManger>();
+
     }
     private void Update()
     {
@@ -76,6 +78,10 @@ public class Plot : MonoBehaviour
         {
             //than you can make here a option like if(andere enum == plantsoort.tomaat) of welke plant het ook is
             gm.AddCarrot();
+
+            var removeComponent = GetComponentInChildren<Plant>();
+            removeComponent.RemovePlant();
+
             plotTaken = false;
         }
     }
