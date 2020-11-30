@@ -12,6 +12,9 @@ public class DayNightCyle : MonoBehaviour
 
     public int Days => days;
 
+    [Header("set here the Time in what is a full day and night cyle in seconds")]
+    public float maxTime;
+
     public float time = 50;
 
     private bool canChangeDay = true;
@@ -20,21 +23,24 @@ public class DayNightCyle : MonoBehaviour
 
     private void Update()
     {
-        if(time > 500)
+        if(time > maxTime)
         {
             time = 0;
         }
-        if((int)time == 250 && canChangeDay)
+        if((int)time == maxTime / 2 && canChangeDay)
         {
             canChangeDay = false;
             days++;
+            
         }
-        if((int)time == 255)
+        if((int)time == maxTime / 2 + 5)
         {
             canChangeDay = true;
         }
 
+        
+
         time += Time.deltaTime;
-        light.GetComponent<Light2D>().color = LightColor.Evaluate(time * 0.002f);
+        light.GetComponent<Light2D>().color = LightColor.Evaluate(time / maxTime);
     }
 }
