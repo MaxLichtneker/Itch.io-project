@@ -17,15 +17,7 @@ public class GameManger : MonoBehaviour
     [HideInInspector] public bool sellUiActive;
     [HideInInspector] public bool ableToWalk;
 
-    public List<Plot> plots;
-
-    private void Awake()
-    {
-        foreach(GameObject plot in GameObject.FindGameObjectsWithTag("Plots"))
-        {
-            plots.Add(plot.GetComponent<Plot>());
-        }
-    }
+   
 
     private void Update()
     {
@@ -38,6 +30,18 @@ public class GameManger : MonoBehaviour
     public void AddMoney(int amount)
     {
         money += amount;
+    }
+    public void AddCarrot()
+    {
+        amountCarrot++;
+    }
+    public void AddTomato()
+    {
+        amountTomato++;
+    }
+    public void AddCapace()
+    {
+        amountCapace++;
     }
 
     

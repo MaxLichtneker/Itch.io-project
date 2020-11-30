@@ -68,8 +68,8 @@ public class Movement : MonoBehaviour
     private void move()
     {
         //rotate the player to the mouse
-        Vector2 direction = new Vector2(targetPos.x - transform.position.x, targetPos.y - transform.position.y);
-        transform.up = direction;
+        //Vector2 direction = new Vector2(targetPos.x - transform.position.x, targetPos.y - transform.position.y);
+        //transform.up = direction;
 
 
         

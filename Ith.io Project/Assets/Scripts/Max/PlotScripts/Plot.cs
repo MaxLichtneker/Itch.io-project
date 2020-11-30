@@ -21,6 +21,11 @@ public class Plot : MonoBehaviour
 
     private GameObject plant;
 
+    private GameManger gm;
+    private void Awake()
+    {
+        gm = GameManger.FindObjectOfType<GameManger>();
+    }
     private void Update()
     {
         CheckPlantState();
@@ -66,6 +71,12 @@ public class Plot : MonoBehaviour
             //var child = Instantiate(plantPrefab, gameObject.transform.position, gameObject.transform.rotation);
 
             //child.transform.parent = gameObject.transform;
+        }
+        if(plotTaken == true && cropState == CropState.harvestable)
+        {
+            //than you can make here a option like if(andere enum == plantsoort.tomaat) of welke plant het ook is
+            gm.AddCarrot();
+            plotTaken = false;
         }
     }
     
