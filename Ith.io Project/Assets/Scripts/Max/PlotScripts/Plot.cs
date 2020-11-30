@@ -59,10 +59,13 @@ public class Plot : MonoBehaviour
     {
         if (plotTaken == false)
         {
-            plotTaken = true;
-            var child = Instantiate(plantPrefab, gameObject.transform.position, gameObject.transform.rotation);
 
-            child.transform.parent = gameObject.transform;
+            SeedSelectionMenu.SetActive(true);
+
+            //plotTaken = true;
+            //var child = Instantiate(plantPrefab, gameObject.transform.position, gameObject.transform.rotation);
+
+            //child.transform.parent = gameObject.transform;
         }
     }
     
