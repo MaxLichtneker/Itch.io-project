@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
 
     private GameManger gm;
 
+    private Rigidbody2D rig;
     
 
     
@@ -23,6 +24,7 @@ public class Movement : MonoBehaviour
     private void Awake()
     {
         gm = GameManger.FindObjectOfType<GameManger>();
+        rig = GetComponent<Rigidbody2D>();
     }
     
     private void Update()
@@ -31,19 +33,26 @@ public class Movement : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                
+
                 SetTargetPosition();
 
             }
+        }
+
+
+
+    }
+    private void FixedUpdate()
+    {
+        if (gm.ableToWalk)
+        {
+            
             if (moving)
             {
                 move();
-                
+
             }
         }
-       
-        
-        
     }
     private void SetTargetPosition()
     {
@@ -66,7 +75,9 @@ public class Movement : MonoBehaviour
         
 
         //moeve to the target position
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+        rig.MovePosition(Vector2.MoveTowards(transform.position, targetPos, speed*Time.deltaTime));
+        
 
         
         
