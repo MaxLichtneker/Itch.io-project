@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeedSelection : MonoBehaviour
+public class PlotManager : MonoBehaviour
 {
-
     void Start()
     {
         
