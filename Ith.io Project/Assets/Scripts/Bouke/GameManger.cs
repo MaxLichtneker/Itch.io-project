@@ -12,16 +12,30 @@ public class GameManger : MonoBehaviour
     public int amountCarrot;
     public int amountTomato;
     public int amountCapace;
-    
-    
+
+
+
+
     [HideInInspector] public bool sellUiActive;
+    [HideInInspector] public bool buyUiActive;
     [HideInInspector] public bool ableToWalk;
+    
 
    
 
     private void Update()
     {
-        ableToWalk = !sellUiActive;
+        //if a ui is active the player is not allowed to walk anymore
+        if (sellUiActive || buyUiActive)
+        {
+            ableToWalk = false;
+        }
+        else
+        {
+            ableToWalk = true;
+        }
+        
+        
     }
     /// <summary>
     /// Call this function whe the amount of money you want to give.
@@ -31,6 +45,7 @@ public class GameManger : MonoBehaviour
     {
         money += amount;
     }
+
     public void AddCarrot()
     {
         amountCarrot++;
