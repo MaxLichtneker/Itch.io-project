@@ -27,12 +27,14 @@ public class DayNightCyle : MonoBehaviour
         {
             time = 0;
         }
+        //change the day number when it is mid night
         if((int)time == maxTime / 2 && canChangeDay)
         {
             canChangeDay = false;
             days++;
             
         }
+        // make it able to change the day agian
         if((int)time == maxTime / 2 + 5)
         {
             canChangeDay = true;
@@ -41,6 +43,7 @@ public class DayNightCyle : MonoBehaviour
         
 
         time += Time.deltaTime;
+        //change the light with the cradient as color
         light.GetComponent<Light2D>().color = LightColor.Evaluate(time / maxTime);
     }
 }

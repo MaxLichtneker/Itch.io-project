@@ -75,7 +75,6 @@ public class Movement : MonoBehaviour
         
 
         //moeve to the target position
-        //transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
         rig.MovePosition(Vector2.MoveTowards(transform.position, targetPos, speed*Time.deltaTime));
         
 

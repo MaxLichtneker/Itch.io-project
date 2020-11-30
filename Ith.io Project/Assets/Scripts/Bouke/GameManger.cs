@@ -17,9 +17,14 @@ public class GameManger : MonoBehaviour
     [HideInInspector] public bool sellUiActive;
     [HideInInspector] public bool ableToWalk;
 
+    public List<Plot> plots;
+
     private void Awake()
     {
-        
+        foreach(GameObject plot in GameObject.FindGameObjectsWithTag("Plots"))
+        {
+            plots.Add(plot.GetComponent<Plot>());
+        }
     }
 
     private void Update()
@@ -27,12 +32,13 @@ public class GameManger : MonoBehaviour
         ableToWalk = !sellUiActive;
     }
     /// <summary>
-    /// here the money is counted up
+    /// Call this function whe the amount of money you want to give.
     /// </summary>
     /// <param name="amount"></param>
     public void AddMoney(int amount)
     {
         money += amount;
     }
+
     
 }
