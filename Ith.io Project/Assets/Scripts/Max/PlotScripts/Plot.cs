@@ -5,10 +5,14 @@ using TMPro;
 
 public class Plot : MonoBehaviour
 {
+    [Header("Keeps track of what the state of the planted seed is")]
     public CropState cropState;
 
     [Header("keeps track of the plot")]
     [SerializeField] private bool plotTaken = false;
+
+    [Header("GameObject of the seed Selection menu")]
+    public GameObject SeedSelectionMenu = null;
 
     [Header("text that will appear when hovering above plot")]
     [SerializeField] private TextMeshPro plotText = null;
