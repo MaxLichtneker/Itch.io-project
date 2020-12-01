@@ -8,6 +8,9 @@ public class Plot : MonoBehaviour
     [Header("Keeps track of what the state of the planted seed is")]
     public CropState cropState;
 
+    [Header("the name of the plant that is currently planted")]
+    [SerializeField] private string currentPlant = "";
+
     [Header("keeps track of the plot")]
     public bool plotTaken = false;
 
@@ -17,17 +20,15 @@ public class Plot : MonoBehaviour
     [Header("text that will appear when hovering above plot")]
     [SerializeField] private TextMeshPro plotText = null;
 
-    public GameObject plantPrefab = null;
-
-    private GameObject plant;
+    private Plant plant;
 
     private GameManger gm;
 
     private void Awake()
     {
         gm = GameManger.FindObjectOfType<GameManger>();
-
     }
+    
     private void Update()
     {
         CheckPlantState();
@@ -35,6 +36,9 @@ public class Plot : MonoBehaviour
         if (plotTaken)
         {
             cropState = GetComponentInChildren<Plant>().cropState;
+            plant = GetComponentInChildren<Plant>();
+
+            currentPlant = plant.plantData.plantName;
         }
         else if (!plotTaken)
         {
@@ -77,7 +81,20 @@ public class Plot : MonoBehaviour
         if(plotTaken == true && cropState == CropState.harvestable)
         {
             //than you can make here a option like if(andere enum == plantsoort.tomaat) of welke plant het ook is
-            gm.AddCarrot();
+            if(currentPlant == "Carrots")
+            {
+                gm.AddCarrot();
+            }
+
+            if(currentPlant == "Cabbage")
+            {
+                gm.AddCapace();
+            }
+
+            if(currentPlant == "Tomtato")
+            {
+                gm.AddTomato();
+            }
 
             var removeComponent = GetComponentInChildren<Plant>();
             removeComponent.RemovePlant();
