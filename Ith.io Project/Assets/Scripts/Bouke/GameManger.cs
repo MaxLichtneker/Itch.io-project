@@ -19,6 +19,8 @@ public class GameManger : MonoBehaviour
     [HideInInspector] public bool sellUiActive;
     [HideInInspector] public bool buyUiActive;
     [HideInInspector] public bool ableToWalk;
+
+    public TMP_Text money_text;
     
 
    
@@ -34,7 +36,7 @@ public class GameManger : MonoBehaviour
         {
             ableToWalk = true;
         }
-        
+        money_text.text = "Money: " + money.ToString();
         
     }
     /// <summary>
