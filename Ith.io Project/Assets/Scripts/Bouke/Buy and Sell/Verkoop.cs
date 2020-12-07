@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-<<<<<<< Updated upstream
 using TMPro;
 
 public class Verkoop : MonoBehaviour
@@ -24,17 +23,6 @@ public class Verkoop : MonoBehaviour
 
     public  bool clickedon;
 
-=======
-
-public class Verkoop : MonoBehaviour
-{
-    public int price_Carrot;
-    public int price_Tomato;
-    public int price_Capace;
-
-    private GameManger gm;
-
->>>>>>> Stashed changes
     private void Awake()
     {
         //get the gamemanger
@@ -43,7 +31,6 @@ public class Verkoop : MonoBehaviour
         {
             Debug.LogError("Cant find the gamemanger in this scene!");
         }
-<<<<<<< Updated upstream
 
         
         sellui.SetActive(gm.sellUiActive);
@@ -64,23 +51,10 @@ public class Verkoop : MonoBehaviour
     /// used for the sell carrot button in the sell ui
     /// </summary>
     public void SellCarrot()
-=======
-    }
-
-    private void Update()
-    {
-        
-    }
-
-    
-
-    public void VerkoopCarrot()
->>>>>>> Stashed changes
     {
         if(gm.amountCarrot > 0)
         {
             gm.amountCarrot -= 1;
-<<<<<<< Updated upstream
             gm.AddMoney(sellPriceCarrot);
         }
     }
@@ -89,17 +63,10 @@ public class Verkoop : MonoBehaviour
     /// used for the sell tomato button in the sell ui
     /// </summary>
     public void SellTomato()
-=======
-            gm.AddMoney(gm.sellPriceCarrot);
-        }
-    }
-    public void Verkooptomato()
->>>>>>> Stashed changes
     {
         if(gm.amountTomato > 0)
         {
             gm.amountTomato -= 1;
-<<<<<<< Updated upstream
             gm.AddMoney(sellPriceTomato);
             
         }
@@ -140,15 +107,6 @@ public class Verkoop : MonoBehaviour
             
                 ActivateSellUi();
         }
-=======
-            gm.AddMoney(gm.sellPriceTomato);
-            
-        }
-    }
-    public void Verkoopcapace()
-    {
-
->>>>>>> Stashed changes
     }
 
 

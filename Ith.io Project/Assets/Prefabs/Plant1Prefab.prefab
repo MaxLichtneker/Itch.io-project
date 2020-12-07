@@ -26,11 +26,7 @@ Transform:
   m_GameObject: {fileID: 3939158174813271126}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
   m_LocalScale: {x: 2.5500002, y: 2.5500002, z: 2.5500002}
-=======
-  m_LocalScale: {x: 3, y: 3, z: 3}
->>>>>>> Stashed changes
   m_Children: []
   m_Father: {fileID: 2111913318601348218}
   m_RootOrder: 0
@@ -74,11 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-<<<<<<< Updated upstream
   m_SortingOrder: 2
-=======
-  m_SortingOrder: 1
->>>>>>> Stashed changes
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -135,13 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantData: {fileID: 11400000, guid: 4d799313264929e4fb46d984e125fa71, type: 2}
-<<<<<<< Updated upstream
   cropState: 0
   growthDuration: 5.12
   monsterSpawnTimer: 3.9
   fullyGrown: 0
   monster: {fileID: 2514940552713269412, guid: 713b26c0c81b8fb41af44c301ad5de76, type: 3}
-=======
-  growthDuration: 5.12
-  fullyGrown: 0
->>>>>>> Stashed changes
