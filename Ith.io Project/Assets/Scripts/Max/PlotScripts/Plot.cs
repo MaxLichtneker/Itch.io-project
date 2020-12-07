@@ -5,6 +5,7 @@ using TMPro;
 
 public class Plot : MonoBehaviour
 {
+<<<<<<< Updated upstream
     [Header("Keeps track of what the state of the planted seed is")]
     public CropState cropState;
 
@@ -18,9 +19,21 @@ public class Plot : MonoBehaviour
     public GameObject SeedSelectionMenu = null;
 
     [Header("text that will appear when hovering above plot")]
+=======
+    [Header("keeps track of the plot")]
+    [SerializeField] private bool plotTaken = false;
+
+>>>>>>> Stashed changes
     [SerializeField] private TextMeshPro plotText = null;
 
+<<<<<<< Updated upstream
     private Plant plant;
+=======
+    public GameObject plantPrefab = null;
+
+<<<<<<< Updated upstream
+    private GameObject plant;
+>>>>>>> Stashed changes
 
     private GameManger gm;
 
@@ -47,6 +60,19 @@ public class Plot : MonoBehaviour
     }
 
     //shows text when the mouse is over the plot
+=======
+
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        
+    }
+
+>>>>>>> Stashed changes
     private void OnMouseOver()
     {
         if(plotTaken == false)
@@ -59,17 +85,24 @@ public class Plot : MonoBehaviour
         }
     }
 
+<<<<<<< Updated upstream
     //sets empties the string so when the mouse is not over plot text is not showing
+=======
+>>>>>>> Stashed changes
     private void OnMouseExit()
     {
         plotText.text = "";
     }
 
+<<<<<<< Updated upstream
     //when the player clicks on the plot it will plant a seed
+=======
+>>>>>>> Stashed changes
     private void OnMouseDown()
     {
         if (plotTaken == false)
         {
+<<<<<<< Updated upstream
 
             SeedSelectionMenu.SetActive(true);
 
@@ -111,6 +144,10 @@ public class Plot : MonoBehaviour
         if(cropState == CropState.dead)
         {
             plotTaken = false;
+=======
+            plotTaken = true;
+            Instantiate(plantPrefab, gameObject.transform.position, gameObject.transform.rotation);
+>>>>>>> Stashed changes
         }
     }
 }

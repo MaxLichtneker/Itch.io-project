@@ -1,65 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+
 public class GameManger : MonoBehaviour
 {
     public int money;
 
-    
+    //hoow mutch the selling price is
+    public int sellPriceCarrot;
+    public int sellPriceTomato;
+    public int sellPriceCapace;
 
     //how mutch I have of this plant
-    public int amountCarrot;
-    public int amountTomato;
-    public int amountCapace;
+    [HideInInspector] public int amountCarrot;
+    [HideInInspector] public int amountTomato;
+    [HideInInspector] public int amountCapace;
 
-
-
-
-    [HideInInspector] public bool sellUiActive;
-    [HideInInspector] public bool buyUiActive;
-    [HideInInspector] public bool ableToWalk;
-
-    public TMP_Text money_text;
-    
-
-   
-
-    private void Update()
+    // Start is called before the first frame update
+    void Start()
     {
-        //if a ui is active the player is not allowed to walk anymore
-        if (sellUiActive || buyUiActive)
-        {
-            ableToWalk = false;
-        }
-        else
-        {
-            ableToWalk = true;
-        }
-        money_text.text = "Money: " + money.ToString();
         
     }
-    /// <summary>
-    /// Call this function whe the amount of money you want to give.
-    /// </summary>
-    /// <param name="amount"></param>
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
     public void AddMoney(int amount)
     {
         money += amount;
     }
-
-    public void AddCarrot()
-    {
-        amountCarrot++;
-    }
-    public void AddTomato()
-    {
-        amountTomato++;
-    }
-    public void AddCapace()
-    {
-        amountCapace++;
-    }
-
-    
 }
