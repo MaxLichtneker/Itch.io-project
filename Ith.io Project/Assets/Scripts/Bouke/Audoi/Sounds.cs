@@ -12,7 +12,7 @@ public class Sounds
     [Range(0f, 1f)]
     public float volume = 1;
     [Range(.1f, 3f)]
-    public float pitch;
+    public float pitch = 1;
 
     public bool loop;
 

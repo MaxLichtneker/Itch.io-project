@@ -33,7 +33,11 @@ public class SoundManger : MonoBehaviour
             s.source.loop = s.loop;
         }
     }
-    
+    private void Start()
+    {
+        //Play("Main Theme");
+    }
+
     public void Play(string name)
     {
         //play sound that was called from a other script

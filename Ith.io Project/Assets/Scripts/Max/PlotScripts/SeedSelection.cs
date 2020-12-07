@@ -59,6 +59,7 @@ public class SeedSelection : MonoBehaviour
 
                     var child = Instantiate(carrotPrefab, plotTransform.position, Quaternion.identity);
                     child.transform.parent = plotTransform;
+                    SoundManger.instance.Play("Seeding");
                 }
                 break;
             case SelectedSeed.cabbage:
@@ -72,6 +73,7 @@ public class SeedSelection : MonoBehaviour
 
                     var child2 = Instantiate(cabagePrefab, plotTransform.position, Quaternion.identity);
                     child2.transform.parent = plotTransform;
+                    SoundManger.instance.Play("Seeding");
                 }
                 break;
             case SelectedSeed.tomato:
@@ -85,6 +87,7 @@ public class SeedSelection : MonoBehaviour
 
                     var child3 = Instantiate(tomatoPrefab, plotTransform.position, Quaternion.identity);
                     child3.transform.parent = plotTransform;
+                    SoundManger.instance.Play("Seeding");
                 }
                 break;
         }

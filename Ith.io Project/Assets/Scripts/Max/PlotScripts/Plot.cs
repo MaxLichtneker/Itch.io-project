@@ -84,16 +84,19 @@ public class Plot : MonoBehaviour
             if(currentPlant == "Carrots")
             {
                 gm.AddCarrot();
+                SoundManger.instance.Play("Harvest");
             }
 
             if(currentPlant == "Cabbage")
             {
                 gm.AddCapace();
+                SoundManger.instance.Play("Harvest");
             }
 
             if(currentPlant == "Tomtato")
             {
                 gm.AddTomato();
+                SoundManger.instance.Play("Harvest");
             }
 
             var removeComponent = GetComponentInChildren<Plant>();
