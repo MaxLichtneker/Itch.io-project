@@ -370,13 +370,17 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -15.324716, y: 3.6532803}
+  - {x: -0.6963663, y: -4.2583075}
+  - {x: -13.376194, y: -9.651025}
+  - {x: -13.662366, y: -9.78293}
+  - {x: -32.195442, y: -2.0019646}
+  - {x: -16.924551, y: 4.404953}
   - {x: -14.057868, y: 3.2253072}
   - {x: -12.593361, y: 3.6829216}
   - {x: -10.834077, y: 2.9763787}
   - {x: -9.460288, y: 3.3764346}
-  - {x: -9.457167, y: 3.7776134}
-  - {x: 4.852579, y: -2.120824}
+  - {x: -9.101553, y: 4.6075454}
+  - {x: 5.160776, y: -1.4805903}
   - {x: 4.2883625, y: -2.115327}
   - {x: 3.6504745, y: -2.4422302}
   m_AdjacentStartPoint: {x: 0, y: 0}
@@ -4506,10 +4510,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropState: 0
+  currentPlant: 
   plotTaken: 0
   SeedSelectionMenu: {fileID: 189411220}
   plotText: {fileID: 2447252}
-  plantPrefab: {fileID: 7181315292251687035, guid: a851a0b25d8d9f9499e2c9dcaa7b75fd, type: 3}
 --- !u!61 &657967905
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5817,6 +5821,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &890946010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 890946011}
+  - component: {fileID: 890946012}
+  m_Layer: 0
+  m_Name: Torch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &890946011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890946010}
+  m_LocalRotation: {x: -0, y: -0, z: -0.19535923, w: 0.9807318}
+  m_LocalPosition: {x: 0.9488459, y: -0.2628849, z: 0}
+  m_LocalScale: {x: 0.21249996, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2029069427}
+  m_Father: {fileID: 1230555224}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &890946012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890946010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a172603641a2984393a2c88d394960d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEquiped: 0
+  spriteVisual: {fileID: 2029069426}
 --- !u!1 &899488705
 GameObject:
   m_ObjectHideFlags: 0
@@ -7638,7 +7688,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.07, y: 0.49, z: 121.71983}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 890946011}
   m_Father: {fileID: 97180811}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10606,10 +10657,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropState: 0
+  currentPlant: 
   plotTaken: 0
   SeedSelectionMenu: {fileID: 1992739582}
   plotText: {fileID: 1393996060}
-  plantPrefab: {fileID: 7181315292251687035, guid: a851a0b25d8d9f9499e2c9dcaa7b75fd, type: 3}
 --- !u!61 &1577514807
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11165,6 +11216,78 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1635669759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1635669760}
+  - component: {fileID: 1635669761}
+  m_Layer: 0
+  m_Name: Sprite Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1635669760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635669759}
+  m_LocalRotation: {x: -0, y: -0, z: 0.006818353, w: 0.99997675}
+  m_LocalPosition: {x: -0.0099999765, y: 0.699, z: 0}
+  m_LocalScale: {x: 1.5182418, y: 0.34483707, z: 0.34072602}
+  m_Children: []
+  m_Father: {fileID: 2029069427}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.781}
+--- !u!114 &1635669761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635669759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 2
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 7.07
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 21300000, guid: 5f1f787a8f070734cb3cc1b7e99e0473, type: 3}
+  m_UseNormalMap: 0
+  m_LightOrder: 26
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &1643303520
 GameObject:
   m_ObjectHideFlags: 0
@@ -12873,10 +12996,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropState: 0
+  currentPlant: 
   plotTaken: 0
   SeedSelectionMenu: {fileID: 1000358053}
   plotText: {fileID: 900714139}
-  plantPrefab: {fileID: 7181315292251687035, guid: a851a0b25d8d9f9499e2c9dcaa7b75fd, type: 3}
 --- !u!61 &1858167093
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13946,6 +14069,89 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2029069426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2029069427}
+  - component: {fileID: 2029069428}
+  m_Layer: 0
+  m_Name: DefaultSprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2029069427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029069426}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1635669760}
+  m_Father: {fileID: 890946011}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -22.531}
+--- !u!212 &2029069428
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029069426}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 5f1f787a8f070734cb3cc1b7e99e0473, type: 3}
+  m_Color: {r: 1, g: 0.42512575, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &2029693147
 GameObject:
   m_ObjectHideFlags: 0
@@ -14209,10 +14415,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropState: 0
+  currentPlant: 
   plotTaken: 0
   SeedSelectionMenu: {fileID: 86228875}
   plotText: {fileID: 975493801}
-  plantPrefab: {fileID: 7181315292251687035, guid: a851a0b25d8d9f9499e2c9dcaa7b75fd, type: 3}
 --- !u!61 &2044670371
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14338,10 +14544,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropState: 0
+  currentPlant: 
   plotTaken: 0
   SeedSelectionMenu: {fileID: 964307588}
   plotText: {fileID: 1645386337}
-  plantPrefab: {fileID: 7181315292251687035, guid: a851a0b25d8d9f9499e2c9dcaa7b75fd, type: 3}
 --- !u!61 &2053030301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14846,10 +15052,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropState: 0
+  currentPlant: 
   plotTaken: 0
   SeedSelectionMenu: {fileID: 1339163121}
   plotText: {fileID: 1616908165}
-  plantPrefab: {fileID: 7181315292251687035, guid: a851a0b25d8d9f9499e2c9dcaa7b75fd, type: 3}
 --- !u!61 &2130633997
 BoxCollider2D:
   m_ObjectHideFlags: 0
