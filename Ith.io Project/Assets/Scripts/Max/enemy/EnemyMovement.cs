@@ -47,9 +47,13 @@ public class EnemyMovement : MonoBehaviour
     {
        distance = Vector3.Distance(gameObject.transform.position, playerTransform.transform.position);
 
-        if(distance > 0.5)
+        if(distance > 0.5f)
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPosition.gameObject.transform.position, -enemySpeed * 1.5f * Time.deltaTime);
+        }
+        else if(distance > 10.0f)
+        {
+            enemySpeed = 0.0f;
         }
     }
 
