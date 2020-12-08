@@ -3616,6 +3616,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2204886130373137217, guid: faadae7941993a744ab4c32280de6f1b, type: 3}
+      propertyPath: sounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204886130373137217, guid: faadae7941993a744ab4c32280de6f1b, type: 3}
+      propertyPath: sounds.Array.data[3].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a21390c08b5955c40b7e06957076a32f, type: 3}
+    - target: {fileID: 2204886130373137217, guid: faadae7941993a744ab4c32280de6f1b, type: 3}
+      propertyPath: sounds.Array.data[3].Name
+      value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204886130373137217, guid: faadae7941993a744ab4c32280de6f1b, type: 3}
+      propertyPath: sounds.Array.data[3].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204886130373137217, guid: faadae7941993a744ab4c32280de6f1b, type: 3}
+      propertyPath: sounds.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204886130373137217, guid: faadae7941993a744ab4c32280de6f1b, type: 3}
+      propertyPath: sounds.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2204886130373137222, guid: faadae7941993a744ab4c32280de6f1b, type: 3}
       propertyPath: m_Name
       value: Audio Manger
