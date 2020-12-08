@@ -25,8 +25,7 @@ public class MainMenu : MonoBehaviour
     public void Options()
     {
         SoundManger.instance.Play("Click");
-        mainMenu.SetActive(false);
-        options.SetActive(true);
+        SceneManager.LoadScene(2);
     }
     public void Controls()
     {
