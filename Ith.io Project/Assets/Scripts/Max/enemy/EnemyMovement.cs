@@ -30,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
     {
         Movement();
 
-        if (torch.isEquiped)
+        if (torch.isEquiped && torch.timer > 0.0f)
         {
             AfraidOfTorch();
         }
