@@ -25,24 +25,13 @@ public class LeaderBord : MonoBehaviour
         }
         template.gameObject.SetActive(false);
 
-        //here is a by hand made list for testing purpeses
 
-        //leaderBordEntries = new List<LeaderBordEntry>
-        //{
-        //    new LeaderBordEntry{money = 2348, name = "AAA"},
-        //    new LeaderBordEntry{money = 123, name = "ASS"},
-        //    new LeaderBordEntry{money = 34524, name = "SAS"},
-        //    new LeaderBordEntry{money = 245245, name = "DAS"},
-        //    new LeaderBordEntry{money = 4524, name = "AAS"},
-        //    new LeaderBordEntry{money = 43255, name = "DAA"},
-        //    new LeaderBordEntry{money = 22, name = "SAA"},
-        //    new LeaderBordEntry{money = 2, name = "ASD"},
-        //    new LeaderBordEntry{money = 1, name = "SAS"},
-        //    new LeaderBordEntry{money = 13244, name = "DAD"},
-        //};
+       
 
         string jsonString = PlayerPrefs.GetString("HighScoreTable");
         LeaderBordScores leaderBordScores = JsonUtility.FromJson<LeaderBordScores>(jsonString);
+
+
 
         for (int i = 0; i < leaderBordScores.leaderBordEntries.Count; i++)
         {
@@ -58,17 +47,29 @@ public class LeaderBord : MonoBehaviour
             }
         }
 
-        leaderBordEntryTransforms = new List<Transform>();
-        foreach(LeaderBordEntry leaderBordEntry in leaderBordScores.leaderBordEntries)
+        if (leaderBordScores.leaderBordEntries.Count > 5)
         {
+            leaderBordScores.leaderBordEntries.RemoveAt(leaderBordScores.leaderBordEntries.Count - 1);
+        }
+
+        leaderBordEntryTransforms = new List<Transform>();
+        foreach (LeaderBordEntry leaderBordEntry in leaderBordScores.leaderBordEntries)
+        {
+            
             CreateLeaderBordTransform(leaderBordEntry, leaderBordEntryTransforms);
         }
 
+        
+
+
+
+
+
 
         //LeaderBordScores leaderBordScores_ = new LeaderBordScores { leaderBordEntries = leaderBordEntries };
-        //string json = JsonUtility.ToJson(leaderBordScores_);
-        //PlayerPrefs.SetString("HighScoreTable", json);
-        //PlayerPrefs.Save();
+        string json = JsonUtility.ToJson(leaderBordScores);
+        PlayerPrefs.SetString("HighScoreTable", json);
+        PlayerPrefs.Save();
         //Debug.Log(PlayerPrefs.GetString("HighScoreTable"));
 
     }
@@ -102,6 +103,26 @@ public class LeaderBord : MonoBehaviour
 
         transformlist.Add(entryTransform);
 
+    }
+    private void AddLeaderBordEntry(int money, string name)
+    {
+        //create the new leaderbord entry
+        LeaderBordEntry leaderBordEntry = new LeaderBordEntry { money = money, name = name };
+
+
+        // load and saved leaderbord
+        string jsonString = PlayerPrefs.GetString("HighScoreTable");
+        LeaderBordScores leaderBordScores = JsonUtility.FromJson<LeaderBordScores>(jsonString);
+
+        
+
+        //add new entry
+        leaderBordScores.leaderBordEntries.Add(leaderBordEntry);
+
+        //save 
+        string json = JsonUtility.ToJson(leaderBordScores);
+        PlayerPrefs.SetString("HighScoreTable", json);
+        PlayerPrefs.Save();
     }
 
     private class LeaderBordScores

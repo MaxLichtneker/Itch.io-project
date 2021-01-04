@@ -1262,10 +1262,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropState: 0
+  currentPlant: 
   plotTaken: 0
   SeedSelectionMenu: {fileID: 0}
   plotText: {fileID: 932518394}
-  plantPrefab: {fileID: 7181315292251687035, guid: a851a0b25d8d9f9499e2c9dcaa7b75fd, type: 3}
 --- !u!61 &362320466
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1787,10 +1787,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropState: 0
+  currentPlant: 
   plotTaken: 0
   SeedSelectionMenu: {fileID: 0}
   plotText: {fileID: 287218549}
-  plantPrefab: {fileID: 7181315292251687035, guid: a851a0b25d8d9f9499e2c9dcaa7b75fd, type: 3}
 --- !u!61 &536730399
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1945,10 +1945,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropState: 0
+  currentPlant: 
   plotTaken: 0
   SeedSelectionMenu: {fileID: 0}
   plotText: {fileID: 411653239}
-  plantPrefab: {fileID: 7181315292251687035, guid: a851a0b25d8d9f9499e2c9dcaa7b75fd, type: 3}
 --- !u!61 &586551134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2772,10 +2772,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropState: 0
+  currentPlant: 
   plotTaken: 0
   SeedSelectionMenu: {fileID: 0}
   plotText: {fileID: 217948746}
-  plantPrefab: {fileID: 7181315292251687035, guid: a851a0b25d8d9f9499e2c9dcaa7b75fd, type: 3}
 --- !u!61 &1065133067
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8204,10 +8204,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropState: 0
+  currentPlant: 
   plotTaken: 0
   SeedSelectionMenu: {fileID: 0}
   plotText: {fileID: 135743166}
-  plantPrefab: {fileID: 7181315292251687035, guid: a851a0b25d8d9f9499e2c9dcaa7b75fd, type: 3}
 --- !u!61 &1488558877
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8695,10 +8695,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropState: 0
+  currentPlant: 
   plotTaken: 0
   SeedSelectionMenu: {fileID: 0}
   plotText: {fileID: 191245377}
-  plantPrefab: {fileID: 7181315292251687035, guid: a851a0b25d8d9f9499e2c9dcaa7b75fd, type: 3}
 --- !u!61 &1795799999
 BoxCollider2D:
   m_ObjectHideFlags: 0
