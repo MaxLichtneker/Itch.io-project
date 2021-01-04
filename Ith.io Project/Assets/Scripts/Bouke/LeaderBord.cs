@@ -26,7 +26,7 @@ public class LeaderBord : MonoBehaviour
         template.gameObject.SetActive(false);
 
 
-       
+        
 
         string jsonString = PlayerPrefs.GetString("HighScoreTable");
         LeaderBordScores leaderBordScores = JsonUtility.FromJson<LeaderBordScores>(jsonString);
