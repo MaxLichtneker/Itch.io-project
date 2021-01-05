@@ -29,6 +29,8 @@ public class Plant : MonoBehaviour
     [Header("keeps track if the plant is fully grown or not")]
     [SerializeField] private bool fullyGrown = false;
 
+    private bool monsterSpawned = false;
+
     [Header("Prefab of the plant monster that spawns once the plant dies")]
     [SerializeField] private GameObject monster = null;
 
@@ -62,7 +64,10 @@ public class Plant : MonoBehaviour
             }
         }
 
-        SpawnMonster();
+        if (!monsterSpawned)
+        {
+            SpawnMonster();
+        }
 
     }
 
@@ -110,15 +115,11 @@ public class Plant : MonoBehaviour
             {
                 cropState = CropState.monster;
 
-                plantSprite.sprite = null;
-
                 Instantiate(monster, gameObject.transform.position, Quaternion.identity);
 
-                cropState = CropState.empty;
+                monsterSpawned = true;
 
                 monsterSpawnTimer = 5.0f;
-                Destroy(gameObject, 2f);
-
             }
 
         }

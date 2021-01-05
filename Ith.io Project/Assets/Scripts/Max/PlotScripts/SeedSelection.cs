@@ -93,7 +93,7 @@ public class SeedSelection : MonoBehaviour
         }
     }
 
-    //checks if the player has no seeds anymore and if so turns on a UI ovrlay
+    //checks if the player has no seeds anymore and if so turns on a UI overlay
     private void CheckIfSeedNull()
     {
         if (PlotManager.plotManagerInstance.carrotSeed == 0)

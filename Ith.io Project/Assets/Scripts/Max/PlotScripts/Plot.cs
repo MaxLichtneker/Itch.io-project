@@ -31,8 +31,6 @@ public class Plot : MonoBehaviour
     
     private void Update()
     {
-        CheckPlantState();
-
         if (plotTaken)
         {
             cropState = GetComponentInChildren<Plant>().cropState;
@@ -65,18 +63,12 @@ public class Plot : MonoBehaviour
         plotText.text = "";
     }
 
-    //when the player clicks on the plot it will plant a seed
+    //when the player clicks on the plot it will open a menu to select a seed to plant
     private void OnMouseDown()
     {
         if (plotTaken == false)
         {
-
             SeedSelectionMenu.SetActive(true);
-
-            //plotTaken = true;
-            //var child = Instantiate(plantPrefab, gameObject.transform.position, gameObject.transform.rotation);
-
-            //child.transform.parent = gameObject.transform;
         }
         if(plotTaken == true && cropState == CropState.harvestable)
         {
