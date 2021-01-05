@@ -67,7 +67,7 @@ public class LeaderBord : MonoBehaviour
             CreateLeaderBordTransform(leaderBordEntry, leaderBordEntryTransforms);
         }
 
-        
+
 
 
         //LeaderBordScores leaderBordScores_ = new LeaderBordScores { leaderBordEntries = leaderBordEntries };
