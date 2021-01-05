@@ -23,6 +23,10 @@ public class LeaderBord : MonoBehaviour
         entrysContainer = transform.Find("Entrys");
         template = transform.Find("Template");
 
+        string json = JsonUtility.ToJson(leaderBordScores);
+        PlayerPrefs.SetString("HighScoreTable", json);
+        PlayerPrefs.Save();
+
         if (gameEnd == true)
         {
             AddLeaderBordEntry(HoldLeaderBordInfo.instance.money, HoldLeaderBordInfo.instance.name);
@@ -56,21 +60,21 @@ public class LeaderBord : MonoBehaviour
         }
 
         if (leaderBordScores.leaderBordEntries.Count > maxLeaderbordEntries)
-        { 
-                leaderBordScores.leaderBordEntries.RemoveAt(leaderBordScores.leaderBordEntries.Count - 1);
+        {
+            leaderBordScores.leaderBordEntries.RemoveAt(leaderBordScores.leaderBordEntries.Count - 1);
         }
 
         leaderBordEntryTransforms = new List<Transform>();
         foreach (LeaderBordEntry leaderBordEntry in leaderBordScores.leaderBordEntries)
         {
-            
+
             CreateLeaderBordTransform(leaderBordEntry, leaderBordEntryTransforms);
         }
 
 
 
 
-        //LeaderBordScores leaderBordScores_ = new LeaderBordScores { leaderBordEntries = leaderBordEntries };
+        //LeaderBordScores leaderBordScores = new LeaderBordScores { leaderBordEntries = leaderBordEntries };
         string json = JsonUtility.ToJson(leaderBordScores);
         PlayerPrefs.SetString("HighScoreTable", json);
         PlayerPrefs.Save();
