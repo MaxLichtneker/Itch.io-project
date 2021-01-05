@@ -23,9 +23,7 @@ public class LeaderBord : MonoBehaviour
         entrysContainer = transform.Find("Entrys");
         template = transform.Find("Template");
 
-        string json = JsonUtility.ToJson(leaderBordScores);
-        PlayerPrefs.SetString("HighScoreTable", json);
-        PlayerPrefs.Save();
+        
 
         if (gameEnd == true)
         {
