@@ -39,16 +39,16 @@ public class LeaderBord : MonoBehaviour
         template.gameObject.SetActive(false);
 
 
-        //AddLeaderBordEntry(444, "AAA");
+        AddLeaderBordEntry(444, "AAA");
         //AddLeaderBordEntry(444, "AAA");
         //AddLeaderBordEntry(444, "AAA");
         //AddLeaderBordEntry(444, "AAA");
 
         //verwijder dit na dat je een keer hebt gespeeld als een test
-        LeaderBordScores leaderBordScores_ = new LeaderBordScores { leaderBordEntries = leaderBordEntries };
-        string json = JsonUtility.ToJson(leaderBordScores_);
-        PlayerPrefs.SetString("HighScoreTable", json);
-        PlayerPrefs.Save();
+        //LeaderBordScores leaderBordScores_ = new LeaderBordScores { leaderBordEntries = leaderBordEntries };
+        //string json = JsonUtility.ToJson(leaderBordScores_);
+        //PlayerPrefs.SetString("HighScoreTable", json);
+        //PlayerPrefs.Save();
 
         string jsonString = PlayerPrefs.GetString("HighScoreTable");
         LeaderBordScores leaderBordScores = JsonUtility.FromJson<LeaderBordScores>(jsonString);
