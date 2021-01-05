@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestSceneMax.unity
     guid: 07bfc4017b0bfaa4eb327db753fa8321
+  - enabled: 1
+    path: Assets/Scenes/LeaderBord.unity
+    guid: 4558400bc5400954f939d8090320c1c1
   m_configObjects: {}

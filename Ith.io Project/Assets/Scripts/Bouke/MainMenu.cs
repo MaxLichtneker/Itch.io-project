@@ -3,26 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenu;
-    public GameObject options;
+    public GameObject name;
     public GameObject controls;
+    public TMP_InputField inputText;
+    public Button StartGameButton;
+
 
     public void Start()
     {
         mainMenu.SetActive(true);
-        options.SetActive(false);
+        name.SetActive(false);
         controls.SetActive(false);
+        inputText.characterLimit = 3;
+        
     }
 
+    private void Update()
+    {
+        inputText.text = inputText.text.ToUpper();
+        if(inputText.text == null)
+        {
+            StartGameButton.interactable = false;
+        }
+        else
+        {
+            StartGameButton.interactable = true;
+        }
+        
+    }
     public void StartGame()
     {
         SoundManger.instance.Play("Click");
+        HoldLeaderBordInfo.instance.name = inputText.text;
         SceneManager.LoadScene(1);
+
     }
-    public void Options()
+    public void GoToNameCreation()
+    {
+        SoundManger.instance.Play("Click");
+        //SceneManager.LoadScene(1);
+        name.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+    public void LeaderBord()
     {
         SoundManger.instance.Play("Click");
         SceneManager.LoadScene(2);
@@ -37,7 +65,7 @@ public class MainMenu : MonoBehaviour
     {
         SoundManger.instance.Play("Click");
         controls.SetActive(false);
-        options.SetActive(false);
+        name.SetActive(false);
         mainMenu.SetActive(true);
     }
     public void ExitGame()

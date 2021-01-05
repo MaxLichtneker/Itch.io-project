@@ -43,6 +43,7 @@ public class PlotManager : MonoBehaviour
                 Time.timeScale = 0.0f;
 
                 lossPanel.SetActive(true);
+                GameManger.gameEnd = true;
             }
         }
     }

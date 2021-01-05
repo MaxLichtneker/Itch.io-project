@@ -9,24 +9,32 @@ public class LeaderBord : MonoBehaviour
     private Transform template;
     private List<LeaderBordEntry> leaderBordEntries;
     private List<Transform> leaderBordEntryTransforms;
+    public int maxLeaderbordEntries;
+
+    public static LeaderBord instance;
+
+    public static bool gameEnd;
 
     private void Awake()
     {
-        
+        instance = this;
+
         //find the template and the entry container
         entrysContainer = transform.Find("Entrys");
         template = transform.Find("Template");
 
+        if (gameEnd == true)
+        {
+            AddLeaderBordEntry(HoldLeaderBordInfo.instance.money, HoldLeaderBordInfo.instance.name);
+            gameEnd = false;
+        }
 
-        if(entrysContainer == null || template == null)
+        if (entrysContainer == null || template == null)
         {
             Debug.LogError("entrysContainer or entry Template not found in this scene");
             return;
         }
         template.gameObject.SetActive(false);
-
-
-        
 
         string jsonString = PlayerPrefs.GetString("HighScoreTable");
         LeaderBordScores leaderBordScores = JsonUtility.FromJson<LeaderBordScores>(jsonString);
@@ -47,9 +55,9 @@ public class LeaderBord : MonoBehaviour
             }
         }
 
-        if (leaderBordScores.leaderBordEntries.Count > 5)
-        {
-            leaderBordScores.leaderBordEntries.RemoveAt(leaderBordScores.leaderBordEntries.Count - 1);
+        if (leaderBordScores.leaderBordEntries.Count > maxLeaderbordEntries)
+        { 
+                leaderBordScores.leaderBordEntries.RemoveAt(leaderBordScores.leaderBordEntries.Count - 1);
         }
 
         leaderBordEntryTransforms = new List<Transform>();
@@ -60,10 +68,6 @@ public class LeaderBord : MonoBehaviour
         }
 
         
-
-
-
-
 
 
         //LeaderBordScores leaderBordScores_ = new LeaderBordScores { leaderBordEntries = leaderBordEntries };
@@ -79,19 +83,8 @@ public class LeaderBord : MonoBehaviour
         Transform entryTransform = Instantiate(template, entrysContainer);
         entryTransform.gameObject.SetActive(true);
 
-        //get the right rank string for eatch postions
-        int rank = transformlist.Count + 1;
-        string rankText;
-        switch (rank)
-        {
-            default:
-                rankText = rank + "TH"; break;
-
-            case 1: rankText = "1ST"; break;
-            case 2: rankText = "2ND"; break;
-            case 3: rankText = "3RD"; break;
-        }
-        entryTransform.Find("Positie text").GetComponent<TMP_Text>().text = rankText;
+        
+        
 
         //get the money text 
         int money = leaderBordEntry.money;
@@ -104,7 +97,7 @@ public class LeaderBord : MonoBehaviour
         transformlist.Add(entryTransform);
 
     }
-    private void AddLeaderBordEntry(int money, string name)
+    public void AddLeaderBordEntry(int money, string name)
     {
         //create the new leaderbord entry
         LeaderBordEntry leaderBordEntry = new LeaderBordEntry { money = money, name = name };
