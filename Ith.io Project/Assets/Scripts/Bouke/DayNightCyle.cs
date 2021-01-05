@@ -8,9 +8,9 @@ public class DayNightCyle : MonoBehaviour
     [SerializeField] private Gradient LightColor;
     [SerializeField] private GameObject light;
 
-    private int days;
+    public int days;
 
-    public int Days => days;
+    //public int Days => days;
 
     [Header("set here the Time in what is a full day and night cyle in seconds")]
     public float maxTime;
