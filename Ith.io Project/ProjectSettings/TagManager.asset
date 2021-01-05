@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Plots
+  - Enemy
   layers:
   - Default
   - TransparentFX
