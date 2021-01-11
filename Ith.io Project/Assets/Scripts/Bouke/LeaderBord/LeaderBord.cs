@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class LeaderBord : MonoBehaviour
 {
     private Transform entrysContainer;
@@ -15,7 +16,24 @@ public class LeaderBord : MonoBehaviour
 
     public static bool gameEnd;
 
+    public TMP_Text testtext;
     private void Awake()
+    {
+        
+        if(PlayerPrefs.GetString("HighScoreTable") != null)
+        {
+            testtext.text = " het is niet null";
+        }
+        else
+        {
+            LeaderBordScores leaderBordScores_ = new LeaderBordScores { leaderBordEntries = leaderBordEntries };
+            string json = JsonUtility.ToJson(0);
+            PlayerPrefs.SetString("HighScoreTable", json);
+            PlayerPrefs.Save();
+        }
+
+    }
+    private void Start()
     {
         instance = this;
 
@@ -23,7 +41,7 @@ public class LeaderBord : MonoBehaviour
         entrysContainer = transform.Find("Entrys");
         template = transform.Find("Template");
 
-        
+
 
         if (gameEnd == true)
         {
@@ -39,21 +57,16 @@ public class LeaderBord : MonoBehaviour
         template.gameObject.SetActive(false);
 
 
-        AddLeaderBordEntry(444, "AAA");
+        //AddLeaderBordEntry(444, "AAA");
         //AddLeaderBordEntry(444, "AAA");
         //AddLeaderBordEntry(444, "AAA");
         //AddLeaderBordEntry(444, "AAA");
 
-        //verwijder dit na dat je een keer hebt gespeeld als een test
-        //LeaderBordScores leaderBordScores_ = new LeaderBordScores { leaderBordEntries = leaderBordEntries };
-        //string json = JsonUtility.ToJson(leaderBordScores_);
-        //PlayerPrefs.SetString("HighScoreTable", json);
-        //PlayerPrefs.Save();
 
         string jsonString = PlayerPrefs.GetString("HighScoreTable");
         LeaderBordScores leaderBordScores = JsonUtility.FromJson<LeaderBordScores>(jsonString);
 
-        
+
 
         for (int i = 0; i < leaderBordScores.leaderBordEntries.Count; i++)
         {
@@ -83,21 +96,17 @@ public class LeaderBord : MonoBehaviour
 
 
 
+
         LeaderBordScores leaderBordScores_ = new LeaderBordScores { leaderBordEntries = leaderBordEntries };
-        string json = JsonUtility.ToJson(leaderBordScores_);
+        string json = JsonUtility.ToJson(leaderBordScores);
         PlayerPrefs.SetString("HighScoreTable", json);
         PlayerPrefs.Save();
         //Debug.Log(PlayerPrefs.GetString("HighScoreTable"));
-
     }
-
     private void CreateLeaderBordTransform(LeaderBordEntry leaderBordEntry, List<Transform> transformlist)
     {
         Transform entryTransform = Instantiate(template, entrysContainer);
         entryTransform.gameObject.SetActive(true);
-
-        
-        
 
         //get the money text 
         int money = leaderBordEntry.money;
@@ -115,12 +124,9 @@ public class LeaderBord : MonoBehaviour
         //create the new leaderbord entry
         LeaderBordEntry leaderBordEntry = new LeaderBordEntry { money = money, name = name };
 
-
         // load and saved leaderbord
         string jsonString = PlayerPrefs.GetString("HighScoreTable");
         LeaderBordScores leaderBordScores = JsonUtility.FromJson<LeaderBordScores>(jsonString);
-
-        
 
         //add new entry
         leaderBordScores.leaderBordEntries.Add(leaderBordEntry);
@@ -142,6 +148,8 @@ public class LeaderBord : MonoBehaviour
         public int money;
         public string name;
     }
+
+    
 }
 
 
