@@ -13,12 +13,16 @@ public class EnemyMovement : MonoBehaviour
     [Header("the transform of the player")]
     private GameObject playerTransform = null;
 
+    private BoxCollider2D boxCollider;
+
     private Torch torch;
 
     private GameObject targetPosition;
 
     private void Start()
     {
+        boxCollider = GetComponent<BoxCollider2D>();
+
         torch = FindObjectOfType<Torch>();
 
         targetPosition = GameObject.Find("Player");
@@ -28,7 +32,11 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+        distance = Vector3.Distance(gameObject.transform.position, playerTransform.transform.position);
+
         Movement();
+
+        AttackPlayer();
 
         if (torch.isEquiped && torch.timer > 0.0f)
         {
@@ -45,12 +53,28 @@ public class EnemyMovement : MonoBehaviour
     //moves the enemy away from the player
     private void AfraidOfTorch()
     {
-       distance = Vector3.Distance(gameObject.transform.position, playerTransform.transform.position);
-
         if(distance > 0.5)
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPosition.gameObject.transform.position, -enemySpeed * 1.5f * Time.deltaTime);
         }
     }
 
+    private void AttackPlayer()
+    {
+        if(distance < 1.35)
+        {
+            StartCoroutine(AttackDelay());
+        }
+    }
+
+
+    private IEnumerator AttackDelay()
+    {
+        boxCollider.enabled = true;
+
+        yield return new WaitForSeconds(.40f);
+
+        boxCollider.enabled = false;
+
+    }
 }
