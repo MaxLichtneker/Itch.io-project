@@ -8,8 +8,8 @@ public class Movement : MonoBehaviour
     [Range(1,10)]
     private float speed = 4;
 
-    private Vector3 targetPos;
-    private bool moving = false;
+    public Vector3 targetPos;
+    public bool moving = false;
 
     private GameManger gm;
 

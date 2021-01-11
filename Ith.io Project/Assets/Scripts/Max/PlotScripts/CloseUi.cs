@@ -13,7 +13,6 @@ public class CloseUi : MonoBehaviour
         }
     }
 
-
     private void TurnOffUI()
     {
         gameObject.SetActive(false);
