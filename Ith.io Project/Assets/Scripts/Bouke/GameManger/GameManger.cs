@@ -18,6 +18,10 @@ public class GameManger : MonoBehaviour
     public TMP_Text money_text;
 
     public static bool gameEnd;
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
     private void Update()
     {
         //if a ui is active the player is not allowed to walk anymore

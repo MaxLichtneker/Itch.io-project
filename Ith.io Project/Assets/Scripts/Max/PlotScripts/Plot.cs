@@ -104,7 +104,7 @@ public class Plot : MonoBehaviour
                 SoundManger.instance.Play("Harvest");
             }
 
-            if(currentPlant == "Tomtato")
+            if(currentPlant == "Tomato") 
             {
                 gm.AddTomato();
                 SoundManger.instance.Play("Harvest");

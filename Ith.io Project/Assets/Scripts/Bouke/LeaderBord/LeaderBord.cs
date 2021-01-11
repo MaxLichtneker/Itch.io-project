@@ -16,13 +16,13 @@ public class LeaderBord : MonoBehaviour
 
     public static bool gameEnd;
 
-    public TMP_Text testtext;
+    
     private void Awake()
     {
         
         if(PlayerPrefs.GetString("HighScoreTable") != null)
         {
-            testtext.text = " het is niet null";
+            //nothing is needed here it is good so
         }
         else
         {
