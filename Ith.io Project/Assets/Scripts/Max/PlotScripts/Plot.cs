@@ -28,7 +28,6 @@ public class Plot : MonoBehaviour
 
     private Plant plant;
     private Movement movement;
-
     private GameManger gm;
 
     private void Awake()

@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour
     [Header("the transform of the player")]
     private GameObject playerTransform = null;
 
-    private BoxCollider2D boxCollider;
+    private BoxCollider2D boxCollider = null;
 
     private Torch torch;
 
