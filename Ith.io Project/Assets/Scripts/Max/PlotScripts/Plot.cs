@@ -15,7 +15,7 @@ public class Plot : MonoBehaviour
     public bool plotTaken = false;
 
     [Header("checks if the player has selected a plot")]
-    private bool plotSelected = false;
+    [SerializeField]private bool plotSelected = false;
 
     [Header("GameObject of the seed Selection menu")]
     public GameObject SeedSelectionMenu = null;
@@ -44,6 +44,14 @@ public class Plot : MonoBehaviour
             if (playerTransform.position == movement.targetPos)
             {
                 SeedSelectionMenu.SetActive(true);
+            }
+        }
+
+        if(plotTaken && cropState == CropState.harvestable && plotSelected)
+        {
+            if(playerTransform.position == movement.targetPos)
+            {
+                CheckIfHarvestable();
             }
         }
 
@@ -88,34 +96,39 @@ public class Plot : MonoBehaviour
             plotSelected = true;
         }
 
-        if (plotTaken == true && cropState == CropState.harvestable)
+        if (plotTaken && cropState == CropState.harvestable)
         {
-            //than you can make here a option like if(andere enum == plantsoort.tomaat) of welke plant het ook is
-            if(currentPlant == "Carrots")
-            {
-                gm.AddCarrot();
-                SoundManger.instance.Play("Harvest");
-            }
-
-            if(currentPlant == "Cabbage")
-            {
-                gm.AddCapace();
-                SoundManger.instance.Play("Harvest");
-            }
-
-            if(currentPlant == "Tomato") 
-            {
-                gm.AddTomato();
-                SoundManger.instance.Play("Harvest");
-            }
-
-            var removeComponent = GetComponentInChildren<Plant>();
-            removeComponent.RemovePlant();
-
-            plotTaken = false;
+            plotSelected = true;
         }
     }
     
+    private void CheckIfHarvestable()
+    {
+        //than you can make here a option like if(andere enum == plantsoort.tomaat) of welke plant het ook is
+        if (currentPlant == "Carrots")
+        {
+            gm.AddCarrot();
+            SoundManger.instance.Play("Harvest");
+        }
+
+        if (currentPlant == "Cabbage")
+        {
+            gm.AddCapace();
+            SoundManger.instance.Play("Harvest");
+        }
+
+        if (currentPlant == "Tomato")
+        {
+            gm.AddTomato();
+            SoundManger.instance.Play("Harvest");
+        }
+
+        var removeComponent = GetComponentInChildren<Plant>();
+        removeComponent.RemovePlant();
+
+        plotTaken = false;
+    }
+
     //checks if the plant is dead and if so wil set the plot taken bool back to false
     private void CheckPlantState()
     {

@@ -70,6 +70,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    //makes the player flash on and off
     private IEnumerator InvincibilityFrames()
     {
         invincibilityFramesActive = true;
@@ -88,6 +89,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    //timer for how long the player is invincible
     private IEnumerator TurnOffInvincibilityFrames(float delay)
     {
         yield return new WaitForSeconds(delay);
