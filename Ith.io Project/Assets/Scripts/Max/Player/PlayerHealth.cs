@@ -14,14 +14,34 @@ public class PlayerHealth : MonoBehaviour
     [Header("panel that activates when the player dies")]
     [SerializeField] private GameObject deathPanel = null;
 
+    [Header("how long the invincibilty frames are active")]
+    [SerializeField] private float invincibilityFramesTimer;
+
+    [Header("Renderer of the player")]
+    private SpriteRenderer playerRenderer;
+
+    [Header("colors the player displays when hit by the enemy and has invincibility frames")]
+    [SerializeField] private Color renderColorOff;
+    [SerializeField] private Color renderColorDefault;
+
+    [Header("Checks if the invincibility frames are active")]
+    private bool invincibilityFramesActive = false;
+
     void Start()
     {
+        playerRenderer = GetComponent<SpriteRenderer>();
+
         health = healthImages.Length;
     }
 
     void Update()
     {
         CheckHealthStatus();
+
+        if (invincibilityFramesActive)
+        {
+            StartCoroutine(TurnOffInvincibilityFrames(invincibilityFramesTimer));
+        }
     }
 
     //when the player collides with an enemy his health will drop and an image in the array will be turned off
@@ -29,10 +49,12 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            if (health > 0)
+            if (health > 0 && !invincibilityFramesActive)
             {
                 health--;
                 healthImages[health].SetActive(false);
+
+                StartCoroutine(InvincibilityFrames());
             }
         }
     }
@@ -47,5 +69,33 @@ public class PlayerHealth : MonoBehaviour
             deathPanel.SetActive(true);
         }
     }
+
+    private IEnumerator InvincibilityFrames()
+    {
+        invincibilityFramesActive = true;
+
+        while (invincibilityFramesActive)
+        {
+            playerRenderer.color = renderColorOff;
+
+            yield return new WaitForSeconds(.10f);
+
+            playerRenderer.color = renderColorDefault;
+
+            yield return new WaitForSeconds(.10f);
+
+            playerRenderer.color = renderColorOff;
+        }
+    }
+
+    private IEnumerator TurnOffInvincibilityFrames(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        invincibilityFramesActive = false;
+
+        playerRenderer.color = renderColorDefault;
+    }
+
 
 }
