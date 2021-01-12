@@ -22,4 +22,5 @@ public class HoldLeaderBordInfo : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+    
 }

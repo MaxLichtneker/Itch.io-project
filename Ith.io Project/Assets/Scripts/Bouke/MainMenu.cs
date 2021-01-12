@@ -39,7 +39,16 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         SoundManger.instance.Play("Click");
-        HoldLeaderBordInfo.instance.name = inputText.text;
+        if(inputText.text == "")
+        {
+            HoldLeaderBordInfo.instance.name = "GAY";
+            Debug.Log("ja");
+        }
+        else
+        {
+            HoldLeaderBordInfo.instance.name = inputText.text;
+        }
+        
         SceneManager.LoadScene(1);
 
     }
