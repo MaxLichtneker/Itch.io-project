@@ -17,6 +17,9 @@ public class Plot : MonoBehaviour
     [Header("checks if the player has selected a plot")]
     [SerializeField]private bool plotSelected = false;
 
+    [Header("checks if the animation has to be played or not")]
+    [SerializeField]private bool interactibleAnimation = false;
+
     [Header("GameObject of the seed Selection menu")]
     public GameObject SeedSelectionMenu = null;
 
@@ -25,6 +28,9 @@ public class Plot : MonoBehaviour
 
     [Header("text that will appear when hovering above plot")]
     [SerializeField] private TextMeshPro plotText = null;
+
+    [Header("Animator of the player")]
+    [SerializeField] private Animator playerAnimator = null;
 
     private Plant plant;
     private Movement movement;
@@ -38,6 +44,8 @@ public class Plot : MonoBehaviour
     
     private void Update()
     {
+        SetAnimationValue();
+
         //checks if the player has selected a plot and if so then opens the seed selection menu
         if (!plotTaken && plotSelected)
         {
@@ -102,25 +110,32 @@ public class Plot : MonoBehaviour
         }
     }
     
+    //checks if the plot you clicked on has a harvestable crop on it
     private void CheckIfHarvestable()
     {
         //than you can make here a option like if(andere enum == plantsoort.tomaat) of welke plant het ook is
         if (currentPlant == "Carrots")
         {
+            interactibleAnimation = true;
             gm.AddCarrot();
             SoundManger.instance.Play("Harvest");
+            //interactibleAnimation = false;
         }
 
         if (currentPlant == "Cabbage")
         {
+            interactibleAnimation = true;
             gm.AddCapace();
             SoundManger.instance.Play("Harvest");
+            interactibleAnimation = false;
         }
 
         if (currentPlant == "Tomato")
         {
+            interactibleAnimation = true;
             gm.AddTomato();
             SoundManger.instance.Play("Harvest");
+            interactibleAnimation = false;
         }
 
         var removeComponent = GetComponentInChildren<Plant>();
@@ -135,6 +150,15 @@ public class Plot : MonoBehaviour
         if(cropState == CropState.dead)
         {
             plotTaken = false;
+        }
+    }
+
+    //sets the bool from the animator to the given bool
+    private void SetAnimationValue()
+    {
+        if(playerAnimator != null)
+        {
+            playerAnimator.SetBool("Grab", interactibleAnimation);
         }
     }
 

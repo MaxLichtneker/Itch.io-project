@@ -52,6 +52,8 @@ public class SeedSelection : MonoBehaviour
             case SelectedSeed.carrot:
                 if(PlotManager.plotManagerInstance.carrotSeed > 0)
                 {
+                    //play animation
+
                     PlotManager.plotManagerInstance.carrotSeed--;
 
                     uiVisual.SetActive(false);

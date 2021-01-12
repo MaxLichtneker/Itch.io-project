@@ -3783,7 +3783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336892258}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9150002, y: 0.5548129, z: 111.71983}
+  m_LocalPosition: {x: -1.9150002, y: 0.5548128, z: 111.71983}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 97180811}
@@ -6719,9 +6719,11 @@ MonoBehaviour:
   currentPlant: 
   plotTaken: 0
   plotSelected: 0
+  interactibleAnimation: 0
   SeedSelectionMenu: {fileID: 189411220}
   playerTransform: {fileID: 1230555224}
   plotText: {fileID: 2447252}
+  playerAnimator: {fileID: 1230555230}
 --- !u!61 &657967905
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6969,7 +6971,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700245591}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9150002, y: 0.5548129, z: 111.71983}
+  m_LocalPosition: {x: -1.9150002, y: 0.5548128, z: 111.71983}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 230145368}
@@ -15671,9 +15673,11 @@ MonoBehaviour:
   currentPlant: 
   plotTaken: 0
   plotSelected: 0
+  interactibleAnimation: 0
   SeedSelectionMenu: {fileID: 1992739582}
   playerTransform: {fileID: 1230555224}
   plotText: {fileID: 1393996060}
+  playerAnimator: {fileID: 1230555230}
 --- !u!61 &1577514807
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19152,9 +19156,11 @@ MonoBehaviour:
   currentPlant: 
   plotTaken: 0
   plotSelected: 0
+  interactibleAnimation: 0
   SeedSelectionMenu: {fileID: 1000358053}
   playerTransform: {fileID: 1230555224}
   plotText: {fileID: 900714139}
+  playerAnimator: {fileID: 1230555230}
 --- !u!61 &1858167093
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20900,9 +20906,11 @@ MonoBehaviour:
   currentPlant: 
   plotTaken: 0
   plotSelected: 0
+  interactibleAnimation: 0
   SeedSelectionMenu: {fileID: 86228875}
   playerTransform: {fileID: 1230555224}
   plotText: {fileID: 975493801}
+  playerAnimator: {fileID: 1230555230}
 --- !u!61 &2044670371
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21031,9 +21039,11 @@ MonoBehaviour:
   currentPlant: 
   plotTaken: 0
   plotSelected: 0
+  interactibleAnimation: 0
   SeedSelectionMenu: {fileID: 964307588}
   playerTransform: {fileID: 1230555224}
   plotText: {fileID: 1645386337}
+  playerAnimator: {fileID: 1230555230}
 --- !u!61 &2053030301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21799,9 +21809,11 @@ MonoBehaviour:
   currentPlant: 
   plotTaken: 0
   plotSelected: 0
+  interactibleAnimation: 0
   SeedSelectionMenu: {fileID: 1339163121}
   playerTransform: {fileID: 1230555224}
   plotText: {fileID: 1616908165}
+  playerAnimator: {fileID: 1230555230}
 --- !u!61 &2130633997
 BoxCollider2D:
   m_ObjectHideFlags: 0
