@@ -7,6 +7,8 @@ public class PlotManager : MonoBehaviour
     [Header("all the seeds and the amounts the player has")]
     public int carrotSeed, cabbageSeed, tomatoSeed;
 
+    [SerializeField]private bool animationPlay = false;
+
     [Header("All the available plots")]
     [SerializeField] private GameObject[] plots;
 
@@ -14,6 +16,8 @@ public class PlotManager : MonoBehaviour
 
     [Header("Panel that activates when all the plants overgrow")]
     [SerializeField] private GameObject lossPanel;
+
+    [SerializeField] private Animator playerAnimator = null;
 
     CropState cropState;
 
@@ -26,9 +30,14 @@ public class PlotManager : MonoBehaviour
 
     private void Update()
     {
+        SetBoolToTrue();
+
+        SetAnimatorValues();
+
         for (int i = 0; i < plots.Length; i++)
         {
             cropStates[i] = plots[i].GetComponent<Plot>().cropState;
+            animationPlay = plots[i].GetComponent<Plot>().interactibleAnimation;
         }
 
         CheckAllPlots();
@@ -48,10 +57,28 @@ public class PlotManager : MonoBehaviour
         }
     }
 
+    private void SetAnimatorValues()
+    {
+        if(playerAnimator != null)
+        {
+            playerAnimator.SetBool("Grab", animationPlay);
+        }
+    }
+
     public static bool IsMonster(CropState states)
     {
-
         return CropState.dead == states;
     }
 
+    private void SetBoolToTrue()
+    {
+        for (int i = 0; i < plots.Length; i++)
+        {
+            if (plots[i].GetComponent<Plot>().interactibleAnimation == true)
+            {
+                animationPlay = true;
+            }
+        }
+    
+    }
 }

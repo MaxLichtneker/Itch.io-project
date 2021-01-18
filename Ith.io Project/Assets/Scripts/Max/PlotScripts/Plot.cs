@@ -18,7 +18,7 @@ public class Plot : MonoBehaviour
     [SerializeField]private bool plotSelected = false;
 
     [Header("checks if the animation has to be played or not")]
-    [SerializeField]private bool interactibleAnimation = false;
+    public bool interactibleAnimation = false;
 
     [Header("GameObject of the seed Selection menu")]
     public GameObject SeedSelectionMenu = null;
@@ -44,8 +44,6 @@ public class Plot : MonoBehaviour
     
     private void Update()
     {
-        SetAnimationValue();
-
         //checks if the player has selected a plot and if so then opens the seed selection menu
         if (!plotTaken && plotSelected)
         {
@@ -59,7 +57,9 @@ public class Plot : MonoBehaviour
         {
             if(playerTransform.position == movement.targetPos)
             {
-                CheckIfHarvestable();
+                StartCoroutine(HarvestSequence());
+
+                plotTaken = false;
             }
         }
 
@@ -113,35 +113,21 @@ public class Plot : MonoBehaviour
     //checks if the plot you clicked on has a harvestable crop on it
     private void CheckIfHarvestable()
     {
-        //than you can make here a option like if(andere enum == plantsoort.tomaat) of welke plant het ook is
-        if (currentPlant == "Carrots")
-        {
-            interactibleAnimation = true;
-            gm.AddCarrot();
-            SoundManger.instance.Play("Harvest");
-            //interactibleAnimation = false;
-        }
+        interactibleAnimation = true;
 
-        if (currentPlant == "Cabbage")
-        {
-            interactibleAnimation = true;
-            gm.AddCapace();
-            SoundManger.instance.Play("Harvest");
-            interactibleAnimation = false;
-        }
+        gm.AddToInventory(currentPlant);
+    }
 
-        if (currentPlant == "Tomato")
-        {
-            interactibleAnimation = true;
-            gm.AddTomato();
-            SoundManger.instance.Play("Harvest");
-            interactibleAnimation = false;
-        }
-
+    //removes the current seed that has been planted
+    private void RemoveCurrentPlant()
+    {
         var removeComponent = GetComponentInChildren<Plant>();
-        removeComponent.RemovePlant();
 
-        plotTaken = false;
+        if(removeComponent != null)
+        {
+            SoundManger.instance.Play("Harvest");
+            removeComponent.RemovePlant();
+        }
     }
 
     //checks if the plant is dead and if so wil set the plot taken bool back to false
@@ -169,5 +155,15 @@ public class Plot : MonoBehaviour
         {
             plotSelected = false;
         }
+    }
+
+    private IEnumerator HarvestSequence()
+    {
+        CheckIfHarvestable();
+
+        yield return new WaitForSeconds(1.2f);
+
+        interactibleAnimation = false;
+        RemoveCurrentPlant();
     }
 }
