@@ -1,7 +1,40 @@
 fileFormatVersion: 2
 guid: 345634a35e15b9040b67752c5d7ba3e8
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7501834582613886803
+    second: enemy walk sprite sheet_0
+  - first:
+      213: -4797043207181016255
+    second: enemy walk sprite sheet_1
+  - first:
+      213: -3888960389604382716
+    second: enemy walk sprite sheet_2
+  - first:
+      213: -8320908434749395107
+    second: enemy walk sprite sheet_3
+  - first:
+      213: -7749884737548792949
+    second: enemy walk sprite sheet_4
+  - first:
+      213: 6610331868002365649
+    second: enemy walk sprite sheet_5
+  - first:
+      213: 1647739036576891183
+    second: enemy walk sprite sheet_6
+  - first:
+      213: -166413587307051538
+    second: enemy walk sprite sheet_7
+  - first:
+      213: -1046960217877559296
+    second: enemy walk sprite sheet_8
+  - first:
+      213: 6855257992054318966
+    second: enemy walk sprite sheet_9
+  - first:
+      213: 5605838028211172118
+    second: enemy walk sprite sheet_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -123,11 +156,242 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: enemy walk sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 45
+        width: 399
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da8fe8b813124e790800000000000000
+      internalID: -7501834582613886803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy walk sprite sheet_1
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 45
+        width: 399
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14366cf6e9a7d6db0800000000000000
+      internalID: -4797043207181016255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy walk sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 45
+        width: 399
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 408e0185123a70ac0800000000000000
+      internalID: -3888960389604382716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy walk sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 45
+        width: 399
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5fe53a5dd1368c80800000000000000
+      internalID: -8320908434749395107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy walk sprite sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 45
+        width: 399
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8bce2054e0e27490800000000000000
+      internalID: -7749884737548792949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy walk sprite sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1995
+        y: 45
+        width: 399
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d0b9b79fcd9cbb50800000000000000
+      internalID: 6610331868002365649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy walk sprite sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2394
+        y: 45
+        width: 399
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21c5b57ce1fdd610800000000000000
+      internalID: 1647739036576891183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy walk sprite sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2793
+        y: 45
+        width: 399
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5c3ca59b7c0bdf0800000000000000
+      internalID: -166413587307051538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy walk sprite sheet_8
+      rect:
+        serializedVersion: 2
+        x: 3192
+        y: 45
+        width: 399
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00841779a337871f0800000000000000
+      internalID: -1046960217877559296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy walk sprite sheet_9
+      rect:
+        serializedVersion: 2
+        x: 3591
+        y: 45
+        width: 399
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6772e04b2d4c22f50800000000000000
+      internalID: 6855257992054318966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy walk sprite sheet_10
+      rect:
+        serializedVersion: 2
+        x: 3990
+        y: 45
+        width: 399
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61337e35cffebcd40800000000000000
+      internalID: 5605838028211172118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e91ca5e1b76fedb45a737eb9eb29608f
     internalID: 0
     vertices: []
     indices: 
