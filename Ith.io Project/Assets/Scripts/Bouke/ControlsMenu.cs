@@ -22,6 +22,7 @@ public class ControlsMenu : MonoBehaviour
         {
             return;
         }
+        SoundManger.instance.Play("Click");
         Whatpage++;
         Pages[Whatpage - 1].SetActive(false);
         Pages[Whatpage].SetActive(true);
@@ -33,6 +34,7 @@ public class ControlsMenu : MonoBehaviour
         {
             return;
         }
+        SoundManger.instance.Play("Click");
         Whatpage--;
         Pages[Whatpage + 1].SetActive(false);
         Pages[Whatpage].SetActive(true);

@@ -7,6 +7,8 @@ public class BackToMenu : MonoBehaviour
 {
     public void BackToMainMenu()
     {
+        SoundManger.instance.Play("Click");
         SceneManager.LoadScene(0);
+        
     }
 }

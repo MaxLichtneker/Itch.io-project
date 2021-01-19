@@ -239,7 +239,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 154705128}
   name: {fileID: 1467605164}
-  controls: {fileID: 0}
   inputText: {fileID: 2019951044}
   StartGameButton: {fileID: 963466420}
 --- !u!1 &154705128
@@ -2127,6 +2126,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2204886130373137217, guid: faadae7941993a744ab4c32280de6f1b, type: 3}
+      propertyPath: sounds.Array.data[2].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 33e1ffdd40b59bf48a325864923e827c, type: 3}
+    - target: {fileID: 2204886130373137217, guid: faadae7941993a744ab4c32280de6f1b, type: 3}
       propertyPath: sounds.Array.data[3].Clip
       value: 
       objectReference: {fileID: 8300000, guid: a21390c08b5955c40b7e06957076a32f, type: 3}
@@ -2141,6 +2144,10 @@ PrefabInstance:
     - target: {fileID: 2204886130373137217, guid: faadae7941993a744ab4c32280de6f1b, type: 3}
       propertyPath: sounds.Array.data[3].pitch
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204886130373137217, guid: faadae7941993a744ab4c32280de6f1b, type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2204886130373137217, guid: faadae7941993a744ab4c32280de6f1b, type: 3}
       propertyPath: sounds.Array.data[3].volume

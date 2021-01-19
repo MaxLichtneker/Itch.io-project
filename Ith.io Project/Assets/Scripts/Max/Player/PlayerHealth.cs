@@ -65,7 +65,7 @@ public class PlayerHealth : MonoBehaviour
         if(health <= 0)
         {
             Time.timeScale = 0.0f;
-
+            GameManger.gameEnd = true;
             deathPanel.SetActive(true);
         }
     }

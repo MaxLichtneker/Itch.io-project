@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cabbage
   m_EditorClassIdentifier: 
   plantName: Cabbage
-  growthSpeed: 1.2
+  growthSpeed: 1.5
   growthSprites:
   - {fileID: 21300000, guid: 155ae13f4ee1b7c4197fd0b3d4d82022, type: 3}
   - {fileID: 21300000, guid: ad0462d98a62d8740ba346f8e4427b5e, type: 3}
