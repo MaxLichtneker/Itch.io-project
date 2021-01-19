@@ -64,5 +64,23 @@ public class GameManger : MonoBehaviour
         amountCapace++;
     }
 
-    
+    public void AddToInventory(string cropName)
+    {
+        if(cropName == "Carrots")
+        {
+            AddCarrot();
+        }
+
+        if(cropName == "Cabbage")
+        {
+            AddCapace();
+        }
+
+        if(cropName == "Tomato")
+        {
+            AddTomato();
+        }
+    }
+
+
 }

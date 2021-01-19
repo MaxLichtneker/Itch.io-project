@@ -19,8 +19,8 @@ public class Movement : MonoBehaviour
     private SpriteRenderer spriteRenderer = null;
 
     private Rigidbody2D rig;
-    
 
+    private Plot[] plot;
     
 
 
@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
         gm = GameManger.FindObjectOfType<GameManger>();
         rig = GetComponent<Rigidbody2D>();
     }
-    
+
     private void Update()
     {
         SetAnimatorValues();
@@ -93,7 +93,21 @@ public class Movement : MonoBehaviour
 
     private void SetAnimatorValues()
     {
-        animator.SetBool("walking", moving);
+        if(animator != null)
+        {
+            animator.SetBool("walking", moving);
+        }
+    }
+
+    public void SetGrabToFalse()
+    {
+        for (int i = 0; i < plot.Length; i++)
+        {
+            if(plot[i].interactibleAnimation == true)
+            {
+                plot[i].interactibleAnimation = false;
+            }
+        }
     }
 
     private void FlipPlayer()
