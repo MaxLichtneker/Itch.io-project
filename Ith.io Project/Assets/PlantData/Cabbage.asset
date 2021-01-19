@@ -15,8 +15,8 @@ MonoBehaviour:
   plantName: Cabbage
   growthSpeed: 1.2
   growthSprites:
-  - {fileID: 21300000, guid: bc90f052612567d4282a2965d6e6d5f1, type: 3}
-  - {fileID: 21300000, guid: a768cb0491ca67d49a211ad80362d44c, type: 3}
-  - {fileID: 21300000, guid: d24178a428bef2a429f2ec3b6360359d, type: 3}
-  - {fileID: 21300000, guid: 6073c40bf1c2f4a4d8b41a0c138ff9ee, type: 3}
-  - {fileID: 21300000, guid: d61c9d5cdb2cf7c409f766f72243eb32, type: 3}
+  - {fileID: 21300000, guid: 155ae13f4ee1b7c4197fd0b3d4d82022, type: 3}
+  - {fileID: 21300000, guid: ad0462d98a62d8740ba346f8e4427b5e, type: 3}
+  - {fileID: 21300000, guid: 8b180981db7f75249a5a7479c98e73bc, type: 3}
+  - {fileID: 21300000, guid: 2e215a3d59036604db797c5fda77b8e4, type: 3}
+  - {fileID: 21300000, guid: 17d8ec4ae1879ad4d93cdf83e2be0449, type: 3}

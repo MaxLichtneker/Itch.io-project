@@ -55,8 +55,6 @@ public class Plot : MonoBehaviour
             if(playerTransform.position == movement.targetPos)
             {
                 StartCoroutine(HarvestSequence());
-
-                plotTaken = false;
             }
         }
 
@@ -123,6 +121,7 @@ public class Plot : MonoBehaviour
         {
             SoundManger.instance.Play("Harvest");
             removeComponent.RemovePlant();
+            plotTaken = false;
         }
     }
 
@@ -149,7 +148,7 @@ public class Plot : MonoBehaviour
     {
         CheckIfHarvestable();
 
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1f);
 
         RemoveCurrentPlant();
     }

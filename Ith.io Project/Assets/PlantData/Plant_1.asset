@@ -15,8 +15,8 @@ MonoBehaviour:
   plantName: Carrots
   growthSpeed: 1.6
   growthSprites:
-  - {fileID: 21300000, guid: 5c23eceb5567aa9448bcfbb146f21cc1, type: 3}
-  - {fileID: 21300000, guid: f86499e2c528397468417de0c349daea, type: 3}
-  - {fileID: 21300000, guid: 88b2beb2b7bd12d44825cc150ca272be, type: 3}
-  - {fileID: 21300000, guid: dad69406c6cfceb498e8a88325de77ad, type: 3}
-  - {fileID: 21300000, guid: 37b9e01e5e3958849a23dc13e0ccfbdd, type: 3}
+  - {fileID: 21300000, guid: 7206813b2c12c9c4aa55558843ad4672, type: 3}
+  - {fileID: 21300000, guid: 3530ada843a93984d80eeea1e285df2e, type: 3}
+  - {fileID: 21300000, guid: f467d653c582abd4187ed46b6a7a8388, type: 3}
+  - {fileID: 21300000, guid: 88daa9528b48a7740a453901de4179bf, type: 3}
+  - {fileID: 21300000, guid: 3bcd77cb01803914f817169ad0ea521d, type: 3}
