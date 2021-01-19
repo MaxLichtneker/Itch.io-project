@@ -21,7 +21,6 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rig;
 
     private Plot[] plot;
-    
 
 
     //public Vector3 maxMovementTopLeft;
@@ -50,7 +49,6 @@ public class Movement : MonoBehaviour
     {
         if (gm.ableToWalk)
         {
-            
             if (moving)
             {
                 move();
@@ -99,14 +97,11 @@ public class Movement : MonoBehaviour
         }
     }
 
-    public void SetGrabToFalse()
+    public void SetSeedSelectionFalse()
     {
-        for (int i = 0; i < plot.Length; i++)
+        if(animator != null)
         {
-            if(plot[i].interactibleAnimation == true)
-            {
-                plot[i].interactibleAnimation = false;
-            }
+            animator.SetBool("Plant", false);
         }
     }
 
@@ -114,12 +109,12 @@ public class Movement : MonoBehaviour
     {
         if(targetPos.x > 0.0f)
         {
-            spriteRenderer.flipX = false;
+            gameObject.transform.localScale = new Vector3(0.5f, .5f, .5f);
         }
 
         if(targetPos.x < 0.0f)
         {
-            spriteRenderer.flipX = true;
+            gameObject.transform.localScale = new Vector3(-0.5f, .5f, .5f);
         }
     }
 

@@ -17,9 +17,6 @@ public class Plot : MonoBehaviour
     [Header("checks if the player has selected a plot")]
     [SerializeField]private bool plotSelected = false;
 
-    [Header("checks if the animation has to be played or not")]
-    public bool interactibleAnimation = false;
-
     [Header("GameObject of the seed Selection menu")]
     public GameObject SeedSelectionMenu = null;
 
@@ -113,8 +110,7 @@ public class Plot : MonoBehaviour
     //checks if the plot you clicked on has a harvestable crop on it
     private void CheckIfHarvestable()
     {
-        interactibleAnimation = true;
-
+        playerAnimator.SetTrigger("Grab");
         gm.AddToInventory(currentPlant);
     }
 
@@ -139,14 +135,6 @@ public class Plot : MonoBehaviour
         }
     }
 
-    //sets the bool from the animator to the given bool
-    private void SetAnimationValue()
-    {
-        if(playerAnimator != null)
-        {
-            playerAnimator.SetBool("Grab", interactibleAnimation);
-        }
-    }
 
     //when the player walks away from the plot the plot will not be selected anymore
     private void OnTriggerExit2D(Collider2D collision)
@@ -163,7 +151,6 @@ public class Plot : MonoBehaviour
 
         yield return new WaitForSeconds(1.2f);
 
-        interactibleAnimation = false;
         RemoveCurrentPlant();
     }
 }

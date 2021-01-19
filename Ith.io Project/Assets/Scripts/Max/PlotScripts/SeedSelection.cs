@@ -28,6 +28,11 @@ public class SeedSelection : MonoBehaviour
     [Header("transform of the plot this selection is attached to")]
     [SerializeField]private Transform plotTransform = null;
 
+    [Header("the animator controller of the player")]
+    [SerializeField] private Animator playerAnimator = null;
+
+    [SerializeField]private bool plantSeedAnim = false;
+
     private Plot plot;
 
     void Start()
@@ -52,7 +57,9 @@ public class SeedSelection : MonoBehaviour
             case SelectedSeed.carrot:
                 if(PlotManager.plotManagerInstance.carrotSeed > 0)
                 {
-                    //play animation
+                    playerAnimator.SetTrigger("Plant");
+
+                    plantSeedAnim = false;
 
                     PlotManager.plotManagerInstance.carrotSeed--;
 
@@ -61,13 +68,17 @@ public class SeedSelection : MonoBehaviour
 
                     var child = Instantiate(carrotPrefab, plotTransform.position, Quaternion.identity);
                     child.transform.parent = plotTransform;
+
                     SoundManger.instance.Play("Seeding");
+
                 }
                 break;
             case SelectedSeed.cabbage:
 
                 if(PlotManager.plotManagerInstance.cabbageSeed > 0)
                 {
+                    playerAnimator.SetTrigger("Plant");
+
                     PlotManager.plotManagerInstance.cabbageSeed--;
 
                     uiVisual.SetActive(false);
@@ -82,6 +93,8 @@ public class SeedSelection : MonoBehaviour
 
                 if(PlotManager.plotManagerInstance.tomatoSeed > 0)
                 {
+                    playerAnimator.SetTrigger("Plant");
+
                     PlotManager.plotManagerInstance.tomatoSeed--;
 
                     uiVisual.SetActive(false);
@@ -124,6 +137,5 @@ public class SeedSelection : MonoBehaviour
         {
             noSeedsVisualTomato.SetActive(false);
         }
-
     }
 }

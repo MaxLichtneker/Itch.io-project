@@ -30,14 +30,12 @@ public class PlotManager : MonoBehaviour
 
     private void Update()
     {
-        SetBoolToTrue();
-
         SetAnimatorValues();
 
         for (int i = 0; i < plots.Length; i++)
         {
             cropStates[i] = plots[i].GetComponent<Plot>().cropState;
-            animationPlay = plots[i].GetComponent<Plot>().interactibleAnimation;
+            //animationPlay = plots[i].GetComponent<Plot>().interactibleAnimation;
         }
 
         CheckAllPlots();
@@ -68,17 +66,5 @@ public class PlotManager : MonoBehaviour
     public static bool IsMonster(CropState states)
     {
         return CropState.dead == states;
-    }
-
-    private void SetBoolToTrue()
-    {
-        for (int i = 0; i < plots.Length; i++)
-        {
-            if (plots[i].GetComponent<Plot>().interactibleAnimation == true)
-            {
-                animationPlay = true;
-            }
-        }
-    
     }
 }
