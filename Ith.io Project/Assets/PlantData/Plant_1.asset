@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Plant_1
   m_EditorClassIdentifier: 
   plantName: Carrots
-  growthSpeed: 0.7
+  growthSpeed: 1.6
   growthSprites:
   - {fileID: 21300000, guid: 5c23eceb5567aa9448bcfbb146f21cc1, type: 3}
   - {fileID: 21300000, guid: f86499e2c528397468417de0c349daea, type: 3}

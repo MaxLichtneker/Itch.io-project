@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject name;
-    public GameObject controls;
+    
     public TMP_InputField inputText;
     public Button StartGameButton;
 
@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     {
         mainMenu.SetActive(true);
         name.SetActive(false);
-        controls.SetActive(false);
+
         inputText.characterLimit = 3;
         
     }
@@ -67,13 +67,12 @@ public class MainMenu : MonoBehaviour
     public void Controls()
     {
         SoundManger.instance.Play("Click");
-        mainMenu.SetActive(false);
-        controls.SetActive(true);
+        SceneManager.LoadScene("ControlsBook");
     }
     public void BackToMainMenu()
     {
         SoundManger.instance.Play("Click");
-        controls.SetActive(false);
+
         name.SetActive(false);
         mainMenu.SetActive(true);
     }
