@@ -46,7 +46,7 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
-            HoldLeaderBordInfo.instance.name = inputText.text;
+            HoldLeaderBordInfo.instance.name = inputText.text; ControlsMenu
         }
         
         SceneManager.LoadScene(1);
