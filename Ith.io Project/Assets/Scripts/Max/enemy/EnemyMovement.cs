@@ -19,6 +19,10 @@ public class EnemyMovement : MonoBehaviour
 
     private GameObject targetPosition;
 
+    public Animator enemyAnimator = null;
+
+    private bool startAttack = false;
+
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
@@ -61,18 +65,18 @@ public class EnemyMovement : MonoBehaviour
 
     private void AttackPlayer()
     {
-        if(distance < 1.35)
+        if(distance < 2f)
         {
-            StartCoroutine(AttackDelay());
+            enemyAnimator.SetTrigger("attack");
         }
     }
 
 
-    private IEnumerator AttackDelay()
+    public IEnumerator AttackDelay()
     {
         boxCollider.enabled = true;
 
-        yield return new WaitForSeconds(.40f);
+        yield return new WaitForSeconds(.2f);
 
         boxCollider.enabled = false;
     }

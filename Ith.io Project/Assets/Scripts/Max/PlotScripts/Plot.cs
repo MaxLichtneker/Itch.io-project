@@ -29,6 +29,9 @@ public class Plot : MonoBehaviour
     [Header("Animator of the player")]
     [SerializeField] private Animator playerAnimator = null;
 
+    [Header("Particle that plays when the crop is finished")]
+    [SerializeField] private ParticleSystem cropFinishedParticle = null;
+
     private Plant plant;
     private Movement movement;
     private GameManger gm;
@@ -55,6 +58,8 @@ public class Plot : MonoBehaviour
             if(playerTransform.position == movement.targetPos)
             {
                 StartCoroutine(HarvestSequence());
+
+                plotTaken = false;
             }
         }
 
@@ -128,7 +133,7 @@ public class Plot : MonoBehaviour
     //checks if the plant is dead and if so wil set the plot taken bool back to false
     private void CheckPlantState()
     {
-        if(cropState == CropState.dead)
+        if (cropState == CropState.dead)
         {
             plotTaken = false;
         }
