@@ -18,6 +18,7 @@ public class Clock : MonoBehaviour
     void Start()
     {
         dayNightCyle = FindObjectOfType<DayNightCyle>();
+        currentTimeVisual.fillAmount = 0.5f;
     }
 
     void Update()
