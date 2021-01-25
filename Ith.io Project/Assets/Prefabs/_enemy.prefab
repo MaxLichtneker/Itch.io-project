@@ -102,6 +102,7 @@ MonoBehaviour:
   enemySpeed: 2.5
   distance: 0
   enemyAnimator: {fileID: 314745574496885612}
+  startAttack: 0
 --- !u!61 &5090794143445868283
 BoxCollider2D:
   m_ObjectHideFlags: 0

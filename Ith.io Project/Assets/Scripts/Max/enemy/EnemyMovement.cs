@@ -21,7 +21,7 @@ public class EnemyMovement : MonoBehaviour
 
     public Animator enemyAnimator = null;
 
-    private bool startAttack = false;
+    [SerializeField]private bool startAttack = false;
 
     private void Start()
     {
@@ -38,9 +38,17 @@ public class EnemyMovement : MonoBehaviour
     {
         distance = Vector3.Distance(gameObject.transform.position, playerTransform.transform.position);
 
-        Movement();
+        if (!startAttack)
+        {
+            Movement();
+        }
 
         AttackPlayer();
+
+        if (startAttack)
+        {
+            enemyAnimator.SetTrigger("attack");
+        }
 
         if (torch.isEquiped && torch.timer > 0.0f)
         {
@@ -65,15 +73,21 @@ public class EnemyMovement : MonoBehaviour
 
     private void AttackPlayer()
     {
-        if(distance < 2f)
+        if(distance < 2.0f)
         {
-            enemyAnimator.SetTrigger("attack");
+            startAttack = true;
         }
     }
 
+    //sets the startattack bool to false in the animation
+    public void TurnOffAttack()
+    {
+        startAttack = false;
+    }
 
     public IEnumerator AttackDelay()
     {
+        
         boxCollider.enabled = true;
 
         yield return new WaitForSeconds(.2f);
