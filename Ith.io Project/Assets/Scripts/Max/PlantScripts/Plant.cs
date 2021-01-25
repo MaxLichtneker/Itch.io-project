@@ -125,6 +125,7 @@ public class Plant : MonoBehaviour
         }
     }
 
+    //removes the plant
     public void RemovePlant()
     {
         Destroy(gameObject);

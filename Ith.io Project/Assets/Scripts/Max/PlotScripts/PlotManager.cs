@@ -34,6 +34,7 @@ public class PlotManager : MonoBehaviour
         CheckAllPlots();
     }
 
+    //checks if all plots are dead if so then ends the game
     private void CheckAllPlots()
     {
         for (int i = 0; i < cropStates.Count; i++)

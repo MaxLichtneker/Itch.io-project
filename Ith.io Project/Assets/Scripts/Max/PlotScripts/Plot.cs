@@ -53,6 +53,7 @@ public class Plot : MonoBehaviour
             }
         }
 
+        //checks if the selected plot is harvestable and selected then performs the harvestsequence
         if(plotTaken && cropState == CropState.harvestable && plotSelected)
         {
             if(playerTransform.position == movement.targetPos)
@@ -90,7 +91,7 @@ public class Plot : MonoBehaviour
         }
     }
 
-    //sets empties the string so when the mouse is not over plot text is not showing
+    //empties the string so when the mouse is not over plot text is not showing
     private void OnMouseExit()
     {
         plotText.text = "";

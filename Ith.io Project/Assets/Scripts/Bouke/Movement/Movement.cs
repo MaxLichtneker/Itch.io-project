@@ -105,6 +105,7 @@ public class Movement : MonoBehaviour
         }
     }
 
+    //flips the player 
     private void FlipPlayer()
     {
         if(targetPos.x > 0.0f)
@@ -115,6 +116,15 @@ public class Movement : MonoBehaviour
         if(targetPos.x < 0.0f)
         {
             gameObject.transform.localScale = new Vector3(-0.5f, .5f, .5f);
+        }
+    }
+
+    //stops the walking animation when the player walks against a wall
+    private void OnCollisionEnter2D(Collision2D collider)
+    {
+        if (collider.collider.CompareTag("Fences"))
+        {
+            moving = false;
         }
     }
 

@@ -37,14 +37,18 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         distance = Vector3.Distance(gameObject.transform.position, playerTransform.transform.position);
-
+        
+        //checks if the enemy is not attacking if so then moves towards the player
         if (!startAttack)
         {
             Movement();
         }
 
+        //attacks the player when in range
         AttackPlayer();
 
+
+        //triggers the attack animation when startattack is true
         if (startAttack)
         {
             enemyAnimator.SetTrigger("attack");
@@ -87,7 +91,6 @@ public class EnemyMovement : MonoBehaviour
 
     public IEnumerator AttackDelay()
     {
-        
         boxCollider.enabled = true;
 
         yield return new WaitForSeconds(.2f);
