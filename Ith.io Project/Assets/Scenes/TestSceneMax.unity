@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 4730820}
   m_Layer: 0
   m_Name: environment
-  m_TagString: Untagged
+  m_TagString: Fences
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3669,7 +3669,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5004
-  m_Sprite: {fileID: 21300000, guid: 1d6981357bf67cf41a1bd4cfb455352a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d267d7572630b584d9d99e8587c693ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3711,7 +3711,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.33, y: 1.69}
+    oldSize: {x: 1.69, y: 1.83}
     newSize: {x: 1.33, y: 1.69}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3739,11 +3739,11 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -0.5104357, y: -0.66730994, z: 0}
-  - {x: 0.5104359, y: -0.64488983, z: 0}
-  - {x: 0.46, y: 0.38, z: 0}
-  - {x: -0.53285414, y: 0.5103764, z: 0}
-  m_ShapePathHash: 527248842
+  - {x: -0.6765421, y: -0.6522061, z: 0}
+  - {x: 0.7671457, y: -0.64488983, z: 0}
+  - {x: 0.7167096, y: 0.6971816, z: 0}
+  - {x: -0.7442619, y: 0.72183037, z: 0}
+  m_ShapePathHash: -997595752
   m_Mesh: {fileID: 381154731}
   m_InstanceId: 16930
 --- !u!43 &317291735
@@ -4697,8 +4697,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 16
     localAABB:
-      m_Center: {x: -0.01120913, y: -0.07846677, z: 0}
-      m_Extent: {x: 0.521645, y: 0.58884317, z: 0}
+      m_Center: {x: 0.011441886, y: 0.034812123, z: 0}
+      m_Extent: {x: 0.7557038, y: 0.6870183, z: 0}
   m_Shapes:
     vertices: []
     shapes: []
@@ -4777,7 +4777,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 704
-    _typelessdata: 7c6ef83ea49f07be00000000cab07fbf275349bd0000000000000080edab023f801725bf1f85eb3e5c8fc23e0000c0332af627bf00000000ddddb3bc33f07f3f0000008000000080eaab02bfd3d42abfedab023f801725bfedab023f801725bf000000001bdeb3bc33f07f3f0000008000000080edab023f801725bfedab023f801725bf1f85eb3e5c8fc23e00000000cab07fbf185349bd00000000000000801f85eb3e5c8fc23e1f85eb3e5c8fc23e8c3415bdb5efe33e000000005f5205be2bd27dbf00000000000000801f85eb3e5c8fc23e216908bf07a8023feaab02bfd3d42abf0000000021f47f3f44ea9b3c0000008000000080eaab02bfd3d42abfeaab02bfd3d42abf868a05bf30b3a0bd0000000021f47f3f0dea9b3c0000008000000080216908bf07a8023feaab02bfd3d42abf216908bf07a8023f000000005f5205be2bd27dbf0000000000000080216908bf07a8023f216908bf07a8023fedab023f801725bf00000000cab07fbf275349bd0000000000000080edab023f801725bfedab023f801725bf7c6ef83ea49f07be00000000cab07fbf185349bd0000000000000080edab023f801725bf1f85eb3e5c8fc23e0000c0332af627bf000000001bdeb3bc33f07f3f0000008000000080eaab02bfd3d42abfedab023f801725bfeaab02bfd3d42abf00000000ddddb3bc33f07f3f0000008000000080eaab02bfd3d42abfeaab02bfd3d42abf1f85eb3e5c8fc23e000000005f5205be2bd27dbf00000000000000801f85eb3e5c8fc23e1f85eb3e5c8fc23e8c3415bdb5efe33e000000005f5205be2bd27dbf00000000000000801f85eb3e5c8fc23e216908bf07a8023f868a05bf30b3a0bd0000000021f47f3f44ea9b3c0000008000000080216908bf07a8023feaab02bfd3d42abf216908bf07a8023f0000000021f47f3f0dea9b3c0000008000000080216908bf07a8023f216908bf07a8023f
+    _typelessdata: f8ee3d3fe02fd63c00000000c5d17fbf8cd219bd0000000000000080a963443f801725bf487a373f7e7a323f608e393d3e0726bf00000000b90ea6bb28ff7f3f0000008000000080dd312dbffbf626bfa963443f801725bfa963443f801725bf000000006a0fa6bb28ff7f3f0000008000000080a963443f801725bfa963443f801725bf487a373f7e7a323f00000000c5d17fbf74d219bd0000000000000080487a373f7e7a323f487a373f7e7a323f60b561bc2fa2353f0000000012318abcadf67fbf0000000000000080487a373f7e7a323ff3873ebfe0c9383fdd312dbffbf626bf000000008db07f3fbea0493d0000008000000080dd312dbffbf626bfdd312dbffbf626bfe8dc35bf28970e3d000000008db07f3fbea0493d0000008000000080f3873ebfe0c9383fdd312dbffbf626bff3873ebfe0c9383f0000000012318abcadf67fbf0000000000000080f3873ebfe0c9383ff3873ebfe0c9383fa963443f801725bf00000000c5d17fbf8cd219bd0000000000000080a963443f801725bfa963443f801725bff8ee3d3fe02fd63c00000000c5d17fbf74d219bd0000000000000080a963443f801725bf487a373f7e7a323f608e393d3e0726bf000000006a0fa6bb28ff7f3f0000008000000080dd312dbffbf626bfa963443f801725bfdd312dbffbf626bf00000000b90ea6bb28ff7f3f0000008000000080dd312dbffbf626bfdd312dbffbf626bf487a373f7e7a323f0000000012318abcadf67fbf0000000000000080487a373f7e7a323f487a373f7e7a323f60b561bc2fa2353f0000000012318abcadf67fbf0000000000000080487a373f7e7a323ff3873ebfe0c9383fe8dc35bf28970e3d000000008db07f3fbea0493d0000008000000080f3873ebfe0c9383fdd312dbffbf626bff3873ebfe0c9383f000000008db07f3fbea0493d0000008000000080f3873ebfe0c9383ff3873ebfe0c9383f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -4831,8 +4831,8 @@ Mesh:
       m_BitSize: 0
     m_UVInfo: 0
   m_LocalAABB:
-    m_Center: {x: -0.01120913, y: -0.07846677, z: 0}
-    m_Extent: {x: 0.521645, y: 0.58884317, z: 0}
+    m_Center: {x: 0.011441886, y: 0.034812123, z: 0}
+    m_Extent: {x: 0.7557038, y: 0.6870183, z: 0}
   m_MeshUsageFlags: 0
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
@@ -18497,7 +18497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759650397}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.9, y: 3.47, z: 0}
+  m_LocalPosition: {x: -8.73, y: 3.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4730819}
@@ -18543,7 +18543,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 805968c8382ef364f94bd1b8a0c875f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c2526010ecfb614185ed1ad29d4043a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

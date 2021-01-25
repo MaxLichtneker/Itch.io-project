@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plots
   - Enemy
+  - Fences
   layers:
   - Default
   - TransparentFX
