@@ -8,20 +8,20 @@ public class OilBarrel : MonoBehaviour
     private Torch torch;
 
     [Header("text that shows up when in range of barrel")]
-    [SerializeField] private TextMeshPro text;
+    [SerializeField] private TextMeshPro text = null;
+
+    [Header("keeps track of the player entering and leaving the collider")]
+    [SerializeField]private bool inCollider = false;
 
     void Start()
     {
         torch = FindObjectOfType<Torch>();
     }
 
-    //checks if the player is colliding and when the player presses F he refills the torch
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.CompareTag("Player"))
+        if (inCollider)
         {
-            text.text = "Press F to refill torch";
-
             if (Input.GetKeyDown(KeyCode.F) && torch.timer < 0.0f)
             {
                 torch.timer = torch.maxTimerValue;
@@ -29,10 +29,23 @@ public class OilBarrel : MonoBehaviour
         }
     }
 
+    //checks if the player is colliding and when the player presses F he refills the torch
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        inCollider = true;
+
+        if (collision.CompareTag("Player"))
+        {
+            inCollider = true;
+            text.text = "Press F to refill torch";
+        }
+    }
+
 
     //when the player exits the collider the text will turn of
     private void OnTriggerExit2D(Collider2D collision)
     {
+        inCollider = false;
         text.text = "";
     }
 
