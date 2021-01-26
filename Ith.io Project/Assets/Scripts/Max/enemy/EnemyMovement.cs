@@ -80,6 +80,7 @@ public class EnemyMovement : MonoBehaviour
         if(distance < 2.0f)
         {
             startAttack = true;
+            SoundManger.instance.Play("EnemyAttack");
         }
     }
 
