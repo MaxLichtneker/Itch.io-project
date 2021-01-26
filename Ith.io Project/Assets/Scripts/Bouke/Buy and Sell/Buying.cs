@@ -41,6 +41,7 @@ public class Buying : MonoBehaviour
     {
         if(gm.money >= buyingPriceCarrotSeeds)
         {
+            SoundManger.instance.Play("Click");
             gm.money -= buyingPriceCarrotSeeds;
             PlotManager.plotManagerInstance.carrotSeed++;
         }
@@ -49,6 +50,7 @@ public class Buying : MonoBehaviour
     {
         if(gm.money >= buyingPriceTomatoSeeds)
         {
+            SoundManger.instance.Play("Click");
             gm.money -= buyingPriceTomatoSeeds;
             PlotManager.plotManagerInstance.tomatoSeed++;
         }
@@ -60,6 +62,7 @@ public class Buying : MonoBehaviour
     {
         if (gm.money >= buyingPriceCapaceSeeds)
         {
+            SoundManger.instance.Play("Click");
             gm.money -= buyingPriceCapaceSeeds;
             PlotManager.plotManagerInstance.cabbageSeed++;
         }
@@ -79,6 +82,7 @@ public class Buying : MonoBehaviour
     /// </summary>
     public void ExitBuyUI()
     {
+        SoundManger.instance.Play("Click");
         gm.buyUiActive = false;
     }
 

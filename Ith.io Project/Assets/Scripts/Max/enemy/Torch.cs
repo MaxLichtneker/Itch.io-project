@@ -19,6 +19,9 @@ public class Torch : MonoBehaviour
     [Header("image that shows how much longer the torch will stay lit")]
     [SerializeField] private Image sliderImage = null;
 
+    [Header("The gameobject what has the silderimange and the hull of the sliderimage in it")]
+    [SerializeField] private GameObject Silderobject = null;
+
     [Header("Lightsource of the torch")]
     [SerializeField] private Light2D torchLight;
 
@@ -27,7 +30,7 @@ public class Torch : MonoBehaviour
 
     private void Start()
     {
-        sliderImage.enabled = false;
+        Silderobject.SetActive(false);
 
         maxTimerValue = timer;
     }
@@ -42,12 +45,12 @@ public class Torch : MonoBehaviour
         {
             EquipTorch();
 
-            sliderImage.enabled = true;
+            Silderobject.SetActive(true);
         }
         else if(Input.GetKeyDown(KeyCode.Alpha1) && isEquiped)
         {
             UnequipTorch();
-            sliderImage.enabled = false;
+            Silderobject.SetActive(false);
         }
     }
 

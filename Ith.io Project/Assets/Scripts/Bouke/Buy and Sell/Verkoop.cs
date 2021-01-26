@@ -54,6 +54,7 @@ public class Verkoop : MonoBehaviour
     {
         if(gm.amountCarrot > 0)
         {
+            SoundManger.instance.Play("Click");
             gm.amountCarrot -= 1;
             gm.AddMoney(sellPriceCarrot);
         }
@@ -66,6 +67,7 @@ public class Verkoop : MonoBehaviour
     {
         if(gm.amountTomato > 0)
         {
+            SoundManger.instance.Play("Click");
             gm.amountTomato -= 1;
             gm.AddMoney(sellPriceTomato);
             
@@ -79,6 +81,7 @@ public class Verkoop : MonoBehaviour
     {
         if(gm.amountCapace > 0)
         {
+            SoundManger.instance.Play("Click");
             gm.amountCapace -= 1;
             gm.AddMoney(sellPriceCapace);
         }
@@ -97,6 +100,7 @@ public class Verkoop : MonoBehaviour
     /// </summary>
     public void ExitShop()
     {
+        SoundManger.instance.Play("Click");
         clickedon = false;
         gm.sellUiActive = false;
     }
