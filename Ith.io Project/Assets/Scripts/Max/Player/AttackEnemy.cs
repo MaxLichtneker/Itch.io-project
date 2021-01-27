@@ -5,82 +5,80 @@ using UnityEngine;
 public class AttackEnemy : MonoBehaviour
 {
     [Header("The animator that belongs to the player")]
-    private Animator playerAnim = null;
-
-    private GameObject playerGameObject;
+    [SerializeField]private Animator playerAnim = null;
 
     private BoxCollider2D boxCollider;
 
     [Header("checks if the player selected the enemy")]
     [SerializeField] private bool enemySelected = false;
 
-    [SerializeField]private bool clickedOther = true;
+    [SerializeField]private bool clickedOther = false;
 
     [Header("Checks the distance between the player and the enemy")]
     [SerializeField] private float distance = 0.0f;
 
+    private GameObject selectedEnemy = null;
 
-    void Start()
-    {
-        playerGameObject = GameObject.Find("Player");
-
-        playerAnim = playerGameObject.GetComponent<Animator>();
-
-        boxCollider = GetComponent<BoxCollider2D>();
-    }
+    Vector3 mousePos;
 
     void Update()
     {
         CalculateDistance();
 
-        CheckIfClickingOther();
+        CheckIfClicking();
 
         Attack();
     }
 
-    private void OnMouseDown()
+    private void CheckIfClicking()
     {
-        if (!enemySelected && clickedOther)
+        if (Input.GetMouseButtonDown(0))
         {
-            clickedOther = false;
-            enemySelected = true;
-        }
-    }
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-    private void CheckIfClickingOther()
-    {
-        if (Input.GetMouseButtonDown(0) && !clickedOther && enemySelected)
-        {
-            clickedOther = true;
-            enemySelected = false;
+            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+
+            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+
+            
+            if(hit.collider.CompareTag("Enemy") && !enemySelected)
+            {
+                enemySelected = true;
+
+                selectedEnemy.transform.position = hit.transform.position;
+            }
+            else if(hit.collider)
+            {
+                enemySelected = false;
+            }
+
         }
     }
 
     private void CalculateDistance()
     {
-        distance = Vector2.Distance(gameObject.transform.position, playerGameObject.transform.position);
+        if(selectedEnemy != null)
+        {
+            distance = Vector2.Distance(gameObject.transform.position, selectedEnemy.transform.position);
+        }
     }
 
     private void Attack()
     {
-        if(distance < 3.25 && enemySelected)
+        if(enemySelected)
         {
             playerAnim.SetTrigger("Attack");
-
-            StartCoroutine(PlayerCollider());
         }
     }
     
 
     public IEnumerator PlayerCollider()
     {
-        yield return new WaitForSeconds(1.5f);
+        gameObject.GetComponentInChildren<CircleCollider2D>().enabled = true;
 
-        playerGameObject.GetComponentInChildren<CircleCollider2D>().enabled = true;
+        yield return new WaitForSeconds(.2f);
 
-        yield return new WaitForSeconds(.4f);
-
-        playerGameObject.GetComponentInChildren<CircleCollider2D>().enabled = false;
+        gameObject.GetComponentInChildren<CircleCollider2D>().enabled = false;
     }
 
 }

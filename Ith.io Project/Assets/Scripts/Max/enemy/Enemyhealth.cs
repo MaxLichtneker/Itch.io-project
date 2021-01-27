@@ -6,7 +6,7 @@ public class Enemyhealth : MonoBehaviour
 {
     [SerializeField] private float health = 1.0f;
 
-    void Start()
+    private void Update()
     {
         CheckHealth();
     }
@@ -15,7 +15,7 @@ public class Enemyhealth : MonoBehaviour
     {
         if (collision.CompareTag("Fist"))
         {
-            health--;
+            health -= 1;
         }
     }
 
@@ -23,7 +23,7 @@ public class Enemyhealth : MonoBehaviour
     {
         if(health <= 0.0f)
         {
-            DestroyImmediate(gameObject);
+            Destroy(gameObject);
         }
     }
     
