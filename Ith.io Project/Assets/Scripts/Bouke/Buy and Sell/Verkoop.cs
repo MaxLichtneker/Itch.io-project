@@ -40,7 +40,7 @@ public class Verkoop : MonoBehaviour
         //show homw mutch of everything is still in stock
         t_amountCarrot.text = "Carrots In Stock: " + gm.amountCarrot.ToString();
         t_amountTomato.text = "Tomatos In Stock: " + gm.amountTomato.ToString();
-        t_amountCapace.text = "Capaces In Stock: " + gm.amountCapace.ToString();
+        t_amountCapace.text = "cabbage In Stock: " + gm.amountCapace.ToString();
 
         sellui.SetActive(gm.sellUiActive);
 

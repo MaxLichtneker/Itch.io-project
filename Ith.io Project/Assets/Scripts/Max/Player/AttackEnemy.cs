@@ -46,11 +46,13 @@ public class AttackEnemy : MonoBehaviour
                 enemySelected = true;
 
                 selectedEnemy.transform.position = hit.transform.position;
+                SoundManger.instance.Play("PlayerAttack");
             }
             else if(hit.collider)
             {
                 enemySelected = false;
             }
+            
 
         }
     }

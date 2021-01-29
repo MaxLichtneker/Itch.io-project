@@ -80,13 +80,14 @@ public class EnemyMovement : MonoBehaviour
         if(distance < 2.0f)
         {
             startAttack = true;
-            SoundManger.instance.Play("EnemyAttack");
+            
         }
     }
 
     //sets the startattack bool to false in the animation
     public void TurnOffAttack()
     {
+        SoundManger.instance.Play("EnemyAttack");
         startAttack = false;
     }
 

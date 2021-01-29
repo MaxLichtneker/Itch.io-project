@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -29,19 +30,22 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        SoundManger.instance.Play("Click");
         pausePanel.SetActive(false);
         Time.timeScale = 1.0f;
 
         paused = false;
     }
 
-    public void Controls()
+    public void BackToMainMenu()
     {
-
+        SoundManger.instance.Play("Click");
+        SceneManager.LoadScene(0);
     }
 
     public void Quit()
     {
+        SoundManger.instance.Play("Click");
         Application.Quit();
     }
 }

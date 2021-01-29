@@ -69,7 +69,13 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - Name: EnemyAttack
-    Clip: {fileID: 8300000, guid: a21390c08b5955c40b7e06957076a32f, type: 3}
+    Clip: {fileID: 8300000, guid: f73f2c2a59762a44baf060f3a0a45bc0, type: 3}
+    volume: 0.8
+    pitch: 0.8
+    loop: 0
+    source: {fileID: 0}
+  - Name: PlayerAttack
+    Clip: {fileID: 8300000, guid: f73f2c2a59762a44baf060f3a0a45bc0, type: 3}
     volume: 1
     pitch: 1
     loop: 0

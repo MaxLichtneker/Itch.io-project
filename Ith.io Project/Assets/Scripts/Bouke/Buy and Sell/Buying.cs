@@ -31,7 +31,7 @@ public class Buying : MonoBehaviour
     {
         textCarrotSeedPrice.text = "Carrot Seeds Price: " + buyingPriceCarrotSeeds.ToString();
         textTomatoSeedPrice.text = "Tomato Seeds Price: " + buyingPriceTomatoSeeds.ToString();
-        textCapaceSeedPrice.text = "Capace Seeds Price: " + buyingPriceCapaceSeeds.ToString();
+        textCapaceSeedPrice.text = "cabbage Seeds Price: " + buyingPriceCapaceSeeds.ToString();
 
 
         buyUi.SetActive(gm.buyUiActive);

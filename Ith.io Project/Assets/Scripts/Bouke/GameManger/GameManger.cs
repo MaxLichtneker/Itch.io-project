@@ -33,7 +33,7 @@ public class GameManger : MonoBehaviour
         {
             ableToWalk = true;
         }
-        money_text.text = "Money: " + money.ToString();
+        money_text.text =  money.ToString();
         
         if(gameEnd == true)
         {
