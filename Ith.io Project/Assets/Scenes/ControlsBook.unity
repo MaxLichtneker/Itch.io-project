@@ -2417,7 +2417,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3037,8 +3037,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "If the you don\u2019t harvest the plant before it dies there will come
-    a enemy out of the dead plants. the Dead plants are afraid of fire."
+  m_text: If your plants become overgrown, a mutant dead plant will rise from the
+    crop and chase after you. the mutant plant is afraid of fire.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c79661d53a2b6540bb563d1967bb6c5, type: 2}
   m_sharedMaterial: {fileID: -3873613314019687860, guid: 7c79661d53a2b6540bb563d1967bb6c5, type: 2}
@@ -3481,7 +3481,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3606,10 +3606,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You can get the torch in and out of you hand with the button number 1.
-    You see the bar on the left bottom how long the torch can burn. If it runs out
-    the torch goes out. If you want to torch to burn again after all the oil ran
-    out you go to the barrel and press F to dip the torch in oil.
+  m_text: 'You can equip your torch by pressing the number 1 on your keyboard. the
+    bar at the bottem left of your screen indicates how long your torch can burn.
+    once it runs out you can relight your torch by pressing the f key near the barrel
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c79661d53a2b6540bb563d1967bb6c5, type: 2}
   m_sharedMaterial: {fileID: -3873613314019687860, guid: 7c79661d53a2b6540bb563d1967bb6c5, type: 2}
@@ -5270,7 +5271,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -6938,7 +6939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You can also lose the game when you are attacked 3 times by a enemies.
+  m_text: You can also lose the game when you are attacked 3 times by an enemies.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c79661d53a2b6540bb563d1967bb6c5, type: 2}
   m_sharedMaterial: {fileID: -3873613314019687860, guid: 7c79661d53a2b6540bb563d1967bb6c5, type: 2}
@@ -6947,7 +6948,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7603,8 +7604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: when you want to attack a enemy. click than with left mouse button on the
-    enemy and the charater will walk to the enemy and punch it
+  m_text: click on the enemy to move towards it an then throw an attack.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c79661d53a2b6540bb563d1967bb6c5, type: 2}
   m_sharedMaterial: {fileID: -3873613314019687860, guid: 7c79661d53a2b6540bb563d1967bb6c5, type: 2}
@@ -8640,9 +8640,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You can Plant your seeds by pressing on the tile you want to plant them
-    on, than you see a menu pop up, than you need to select what plant you want to
-    plant in that place.
+  m_text: You can plant your seeds by pressing on the tile where you want to plant
+    them on, a menu will pop up, you can choose what plant you want to place there.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c79661d53a2b6540bb563d1967bb6c5, type: 2}
   m_sharedMaterial: {fileID: -3873613314019687860, guid: 7c79661d53a2b6540bb563d1967bb6c5, type: 2}
@@ -8651,7 +8650,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
